@@ -168,8 +168,13 @@ button {
   }
 }
 
-@media (max-width:320px) {
+@media screen and (max-width: 768px) {
   .forumbeginner {
-    overflow-y:scroll;
+    max-height: 80vh;
+    /* fit within viewport */
+    overflow-y: auto;
+    /* enable vertical scroll only */
+    padding-bottom: 20px;
+    /* some space for button */
   }
 }
