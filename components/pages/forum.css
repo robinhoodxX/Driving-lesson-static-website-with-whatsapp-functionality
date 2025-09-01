@@ -168,8 +168,9 @@ button {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .forum-wrap {
+    background-color: #b91c1c;
     max-height: 100vh;
     /* fit within viewport */
     overflow-y: auto;
