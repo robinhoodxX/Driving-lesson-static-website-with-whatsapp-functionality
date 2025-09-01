@@ -168,7 +168,7 @@ button {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .forum-wrap {
     background-color: #b91c1c;
     max-height: 100vh;
