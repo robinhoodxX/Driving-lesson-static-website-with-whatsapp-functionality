@@ -174,7 +174,7 @@ button {
     /* fit within viewport */
     overflow-y: auto;
     /* enable vertical scroll only */
-    padding-bottom: 20px;
+    padding-bottom: 63px;
     /* some space for button */
   }
 }
