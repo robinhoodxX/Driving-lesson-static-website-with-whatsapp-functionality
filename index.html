@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='styles.css'>
+  <link href="components/pages/forum.html">
+  <script src='script.js'></script>
+  <link rel='import' href='components/header.html'>
+  <link rel='stylesheet' href='components/componentscss/header.css'>
+  <link rel='import' href='components/header2.html'>
+  <link rel='stylesheet' href='components/componentscss/header2.css'>
+</head>
+
+<body>
+  <div id="root">
+    <!-- navbar -->
+    <div class="container">
+      <h3 class="title"><a href="#home" class="titlea">Home</a></h3>
+      <div class="dropdown">
+        <button class="dropbtn">☰</button>
+        <ul class="list">
+          <li class="item"><a href="#instructors" class="nav-link">Become Instructor</a></li>
+          <li class="item"><a href="#packages" class="nav-link">Driving Courses</a></li>
+          <li class="item"><a href="#more-reviews" class="nav-link">Comentary</a></li>
+          <li class="item"><a href="#aboutusbk" class="nav-link">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <section id="header">
+      <script>
+        fetch('components/header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header').innerHTML = data;
+          });
+      </script>
+    </section>
+    <section id="header2">
+      <script>
+        fetch('components/header2.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header2').innerHTML = data;
+          });
+      </script>
+    </section>
+  </div>
+
+</body>
+<script>
+  const dropBtn = document.querySelector(".dropbtn");
+  const dropdown = document.querySelector(".list");
+
+  // Toggle dropdown on button click
+  dropBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent body click trigger
+    dropdown.classList.toggle("show");
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+    if (dropdown.classList.contains("show") && !dropdown.contains(e.target)) {
+      dropdown.classList.remove("show");
+    }
+  });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+<script>
+  smoothscroll.polyfill();
+</script>
+
+</html>

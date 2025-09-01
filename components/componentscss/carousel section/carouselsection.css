@@ -1,0 +1,100 @@
+/* video and pic card animation ----------------------------*/
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll-left 8s linear infinite;
+}
+
+.carousel-track.reverse {
+  display: flex;
+  flex-direction: row;
+  animation: scroll-right 20s linear infinite;
+  transition: all 0.5s ease-in-out;
+}
+
+.carousel-track.reverse:hover {
+  transform: scale(1.05);
+}
+
+.carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+.card {
+  flex: 0 0 auto;
+  height: 400px;
+  margin: 0 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card video {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card1 {
+  flex: 0 0 auto;
+}
+
+.pic1:hover {
+  transform: scale(1.05);
+}
+
+.pic1 {
+  flex: 0 0 auto;
+  height: 300px;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: transform 0.5s ease-in-out;
+}
+
+.pic1 img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Animation for Row 1 (left) */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Animation for Row 2 (right) */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ------------------------------------------   */
+@media screen and (max-width: 320px) {
+  .card {
+    height: 300px;
+  }
+}
