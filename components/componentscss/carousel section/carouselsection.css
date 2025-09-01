@@ -14,7 +14,6 @@
 
 .carousel-track.reverse {
   display: flex;
-  flex-direction: row;
   animation: scroll-right 20s linear infinite;
   animation: scroll-right 5s linear infinite;
   transition: all 0.5s ease-in-out;
