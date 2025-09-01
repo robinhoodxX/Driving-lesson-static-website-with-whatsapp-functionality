@@ -167,3 +167,9 @@ button {
     flex-direction: column-reverse;
   }
 }
+
+@media (max-width:320px) {
+  .forumbeginner {
+    overflow-y:scroll;
+  }
+}
