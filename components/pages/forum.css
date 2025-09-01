@@ -170,7 +170,7 @@ button {
 
 @media screen and (max-width: 768px) {
   .forumbeginner {
-    max-height: 80vh;
+    max-height: 100vh;
     /* fit within viewport */
     overflow-y: auto;
     /* enable vertical scroll only */
