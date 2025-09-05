@@ -190,14 +190,6 @@ button {
   }
 }
 
-@media (max-width:375px) {
-  .forumbeginner {
-    max-height: 100vh;
-    overflow-y: auto;
-    padding-bottom: 63px;
-  }
-}
-
 @media (max-width:320px) {
   .forumbeginner {
     max-height: 100vh;
