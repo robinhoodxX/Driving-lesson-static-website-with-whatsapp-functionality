@@ -158,10 +158,9 @@ button {
   margin-top: 6px;
 }
 
-@media (max-width:768px) {
+@media (max-width:1024px) {
   .forumbeginner {
-    max-height: 100vh;
-    overflow-y: auto;
+    overflow-y: scroll;
   }
 }
 
