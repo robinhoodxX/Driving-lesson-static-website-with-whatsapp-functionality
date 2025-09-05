@@ -100,6 +100,23 @@
   color: #555;
 }
 
+.more-reviews-link {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.more-reviews-link a {
+  color: #00ff08;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.stars {
+  color: #ffff00;
+  font-size: 25px;
+}
+
 /* About Us section ------------------------------------*/
 .aboutusbk {
   display: flex;
@@ -241,6 +258,11 @@
   }
 }
 @media screen and (max-width: 320px) {
+  .revivemainbk {
+    height: 100%;
+    padding: 170px 10px 20px;
+  }
+
   .reveiwh h2 {
     width: 59%;
   }
@@ -248,10 +270,7 @@
     flex-direction: column;
   }
   .swiper-slide {
-    height: 150px;
-  }
-  .revivemainbk {
-    height: 800px;
+    height: 300px;
   }
   .contactncopyright {
     flex-direction: column;
