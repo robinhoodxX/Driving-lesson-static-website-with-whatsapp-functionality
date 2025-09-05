@@ -176,7 +176,7 @@ button {
   }
 
   .forumbeginner {
-    max-height: 100vh;
+    max-height: 140vh;
     overflow-y: auto;
     padding-bottom: 63px;
   }
@@ -192,7 +192,7 @@ button {
 
 @media (max-width:320px) {
   .forumbeginner {
-    max-height: 100vh;
+    max-height: 140vh;
     overflow-y: auto;
     padding-bottom: 63px;
   }
