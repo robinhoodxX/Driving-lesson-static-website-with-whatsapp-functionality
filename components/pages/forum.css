@@ -169,8 +169,7 @@ button {
 }
 
 @media (max-width:320px) {
-  .forum-wrap {
-    background-color: #b91c1c;
+  .forumbeginner {
     max-height: 100vh;
     /* fit within viewport */
     overflow-y: auto;
