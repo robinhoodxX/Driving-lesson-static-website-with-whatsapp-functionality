@@ -8,31 +8,38 @@ html {
 }
 
 .forumhighway {
+  overflow: scroll;
   height: 100vh;
 }
 
 .forumexamsuccesssec {
+  overflow: scroll;
   height: 100vh;
 }
 
 .forumrefreshercoursesec {
+  overflow: scroll;
   height: 100vh;
 }
 
 .foruminstructorsec {
+  overflow: scroll;
   height: 100vh;
 }
 
 .forumvehicleSec {
   height: 100vh;
+  overflow: scroll;
 }
 
 .forumtwentyhoursec {
   height: 100vh;
+  overflow: scroll;
 }
 
 .forumthirtyhoursec {
   height: 100vh;
+  overflow: scroll;
 }
 
 .forum-header {
