@@ -157,7 +157,7 @@ button {
   margin-top: 6px;
 }
 
-@media (max-width:740px) {
+@media (max-width:768px) {
   .forumbeginner {
     max-height: 100vh;
     overflow-y: auto;
@@ -183,6 +183,14 @@ button {
 }
 
 @media (max-width:425px) {
+  .forumbeginner {
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 63px;
+  }
+}
+
+@media (max-width:375px) {
   .forumbeginner {
     max-height: 100vh;
     overflow-y: auto;
