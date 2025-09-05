@@ -184,7 +184,7 @@ button {
 
 @media (max-width:425px) {
   .forumbeginner {
-    max-height: 100vh;
+    max-height: 140vh;
     overflow-y: auto;
     padding-bottom: 63px;
   }
