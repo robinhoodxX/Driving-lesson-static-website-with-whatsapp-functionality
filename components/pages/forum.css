@@ -196,4 +196,47 @@ button {
     overflow-y: auto;
     padding-bottom: 63px;
   }
+
+  .forumhighway {
+    max-height: 140vh;
+    overflow-y: auto;
+    padding-bottom: 63px;
+  }
+
+  .forumexamsuccesssec {
+    max-height: 140vh;
+    overflow-y: auto;
+    padding-bottom: 63px;
+  }
+
+  .forumrefreshercoursesec {
+    max-height: 140vh;
+    overflow-y: auto;
+    padding-bottom: 63px;
+  }
+
+  .forumtwentyhoursec {
+    max-height: 140vh;
+    overflow-y: auto;
+    padding-bottom: 63px;
+  }
+
+  .forumthirtyhoursec {
+    max-height: 140vh;
+    overflow-y: auto;
+    padding-bottom: 63px;
+  }
+
+  .foruminstructorsec {
+    max-height: 140vh;
+    overflow-y: auto;
+    padding-bottom: 63px;
+  }
+
+  .forumvehicleSec {
+    max-height: 140vh;
+    overflow-y: auto;
+    padding-bottom: 63px;
+  }
+
 }
