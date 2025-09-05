@@ -3,7 +3,7 @@ html {
 }
 
 .forumbeginner {
-  overflow: auto;
+  overflow: scroll;
   height: 100vh;
 }
 
