@@ -161,7 +161,6 @@ button {
   .forumbeginner {
     max-height: 100vh;
     overflow-y: auto;
-    padding-bottom: 63px;
   }
 }
 
@@ -176,37 +175,29 @@ button {
   }
 
   .forumbeginner {
-    max-height: 140vh;
     overflow-y: auto;
-    padding-bottom: 163px;
   }
 }
 
 @media (max-width:425px) {
   .forumbeginner {
-    max-height: 140vh;
     overflow-y: auto;
-    padding-bottom: 163px;
   }
 }
 
 @media (max-width:320px) {
   .forumbeginner {
-    max-height: 140vh;
     overflow-y: auto;
-    padding-bottom: 163px;
   }
 
   .forumhighway {
     max-height: 140vh;
     overflow-y: auto;
-    padding-bottom: 63px;
   }
 
   .forumexamsuccesssec {
     max-height: 140vh;
     overflow-y: auto;
-    padding-bottom: 63px;
   }
 
   .forumrefreshercoursesec {
