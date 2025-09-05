@@ -157,6 +157,14 @@ button {
   margin-top: 6px;
 }
 
+@media (max-width:740px) {
+  .forumbeginner {
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 63px;
+  }
+}
+
 @media (max-width:640px) {
   .forum-grid {
     grid-template-columns: 1fr;
@@ -166,7 +174,15 @@ button {
     justify-content: stretch;
     flex-direction: column-reverse;
   }
-  
+
+  .forumbeginner {
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 63px;
+  }
+}
+
+@media (max-width:425px) {
   .forumbeginner {
     max-height: 100vh;
     overflow-y: auto;
