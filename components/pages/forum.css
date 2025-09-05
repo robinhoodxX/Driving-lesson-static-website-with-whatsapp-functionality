@@ -166,15 +166,18 @@ button {
     justify-content: stretch;
     flex-direction: column-reverse;
   }
+  
+  .forumbeginner {
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 63px;
+  }
 }
 
 @media (max-width:320px) {
   .forumbeginner {
     max-height: 100vh;
-    /* fit within viewport */
     overflow-y: auto;
-    /* enable vertical scroll only */
     padding-bottom: 63px;
-    /* some space for button */
   }
 }
