@@ -93,8 +93,19 @@
 }
 
 /* ------------------------------------------   */
+@media screen and (max-width: 425px) {
+  .pic1 {
+    width: 200px;
+    height: 200px;
+  }
+}
+/* ------------------------------------------   */
 @media screen and (max-width: 320px) {
   .card {
     height: 300px;
+  }
+
+  .pic1 {
+    height: 200px;
   }
 }
