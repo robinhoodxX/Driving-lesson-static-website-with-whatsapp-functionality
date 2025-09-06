@@ -353,4 +353,8 @@
   .reviewer-name {
     font-size: 18px;
   }
+
+  .aboutuscontent {
+    flex-direction: column; 
+  }
 }
