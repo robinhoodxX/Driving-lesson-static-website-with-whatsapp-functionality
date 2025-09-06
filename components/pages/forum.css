@@ -181,3 +181,38 @@ button {
     flex-direction: column-reverse;
   }
 }
+
+@media (max-width:425px) {
+  .forumbeginner {
+    height: 90vh;
+    overflow-y: scroll;
+  }
+  .forumhighway {
+    height: 90vh;
+    overflow-y: scroll;
+  }
+  .forumexamsuccesssec {
+    height: 90vh;
+    overflow-y: scroll;
+  }
+  .forumrefreshercoursesec {
+    height: 90vh;
+    overflow-y: scroll;
+  }
+  .foruminstructorsec {
+    height: 90vh;
+    overflow-y: scroll;
+  }
+  .forumvehicleSec {
+    height: 90vh;
+    overflow-y: scroll;
+  }
+  .forumtwentyhoursec {
+    height: 90vh;
+    overflow-y: scroll;
+  }
+  .forumthirtyhoursec {
+    height: 90vh;
+    overflow-y: scroll;
+  }
+}
