@@ -1,20 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ADI-PDI</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/components/assets/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/components/assets/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/components/assets/favicon_io/favicon-16x16.png">
-    <link rel="stylesheet" href="/static/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADI-PDI</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/components/assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/components/assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/components/assets/favicon_io/favicon-16x16.png">
+  <link rel='stylesheet' href='/styles.css'>
+  <script src="/components/pages/forums/script.js" defer></script>
+  <style>
+    body,
+    .item,
+    .adititle {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+
+    .item {
+      background-color: rgb(0, 164, 77);
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      color: rgb(255, 255, 255);
+      -webkit-transition: all 0.3s ease;
+      /* Safari/iOS support */
+      transition: all 0.3s ease;
+    }
+
+    .item:hover {
+      background-color: rgb(0, 112, 52);
+      color: rgb(255, 255, 255);
+    }
+
+    .adititle {
+      color: rgb(34, 34, 34);
+      display: -webkit-flex;
+      /* Safari < 9 */
+      display: flex;
+      -webkit-justify-content: center;
+      justify-content: center;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .container1 {
+      padding: 40px;
+      margin: 50px auto;
+      margin-bottom: 0;
+      max-width: 80%;
+      background-color: rgb(0, 181, 85);
+      color: rgb(255, 255, 255);
+    }
+
+    .arrow-down {
+      margin: 0 auto;
+      margin-bottom: 20px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      /* left slant */
+      border-right: 10px solid transparent;
+      /* right slant */
+      border-top: 10px solid rgb(0, 181, 85);
+      /* color of arrow */
+    }
+
+    .dash {
+      width: 80%;
+      height: 1px;
+      background-color: rgb(203, 203, 203);
+      margin: 20px 0;
+    }
+
+    @media screen and (max-width: 768px) {
+
+      /* iPad portrait */
+      .container1 {
+        max-width: 95%;
+        padding: 20px;
+      }
+    }
+
+    @media screen and (max-width: 414px) {
+
+      /* iPhone XR/11 */
+      .item {
+        font-size: 14px;
+      }
+
+      .adititle {
+        font-size: 22px;
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+
+      /* iPhone SE & 8 */
+      .item {
+        font-size: 13px;
+      }
+    }
+
+
+    @media screen and (max-width: 320px) {
+      .item {
+        font-size: 12px;
+      }
+
+      .adititle {
+        font-size: 20px;
+        padding: 20px 20px;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div>
-      <section>
-        <h1>ADI-PDI Page</h1>
-        <p>This is the ADI-PDI page content.</p>
-      </section>
+  <div>
+    <div class="container">
+      <h3 class="title"><a href="/index.html" class="titlea">Home</a></h3>
+      <div class="dropdown">
+        <button class="dropbtn">☰</button>
+        <ul class="list">
+          <li class="item"><a href="#aboutusbk" class="nav-link">Become a driving instructor</a></li>
+        </ul>
+      </div>
     </div>
+    <section>
+      <div>
+        <h1 class="adititle">Join Our Driving School Team ADIs & PDIs Wanted!</h1>
+        <div class="container1">
+          <p>
+            Are you a qualified ADI or a trainee PDI looking for the right school to support and grow with?
+            We’re expanding our team and would love to have you on board!
+          </p>
+          <div class="dash"></div>
+          <h4>What we offer:</h4>
+          <ul>
+            <li>Competitive pupil supply – no long waiting around for work</li>
+            <li>Flexible working hours to suit your lifestyle</li>
+            <li>Friendly, professional team environment</li>
+            <li>Ongoing support to help you develop as an instructor</li>
+            <li>Opportunities for career growth within the school</li>
+          </ul>
+
+          <h4>What we’re looking for:</h4>
+          <ul>
+            <li>Enthusiastic and reliable ADIs or PDIs</li>
+            <li>A passion for teaching and helping learners succeed</li>
+            <li>Good communication and people skills</li>
+            <li>Professionalism and a positive attitude</li>
+          </ul>
+          <div class="dash"></div>
+          <p>
+            Whether you’re newly qualified or still in training, we’ll provide the support and pupils you need to
+            succeed.
+            Get in touch today to find out how you can become part of our growing driving school family!
+          </p>
+        </div>
+        <div class="arrow-down"></div>
+        <div>
+          <section id="adipdi" class="forumadipdi">
+            <div>
+              <div id="beginnerform" class="forum-header">
+                <h5>Registration to ADI-PDI</h5>
+              </div>
+              <div class="forum-wrap" aria-live="polite">
+                <h3>Contact / Forum</h3>
+
+                <form id="contactForm-beginnerform" class="forum-grid" novalidate>
+                  <div class="field">
+                    <label for="firstName">First name</label>
+                    <input id="firstName" name="firstName" type="text" placeholder="Your first name" required
+                      minlength="2" />
+                    <div class="error" id="err-firstName" aria-hidden="true"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="phone">Phone number</label>
+                    <input id="phone" name="phone" type="tel" placeholder="+44 7123 456789" pattern="\+?[0-9\s\-]{7,20}"
+                      required />
+                    <div class="error" id="err-phone" aria-hidden="true"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="postcode">Post Code</label>
+                    <input id="postcode" name="postcode" type="text" placeholder="AA9A 9AA"
+                      pattern="[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}" required />
+                    <div class="error" id="err-postcode" aria-hidden="true"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="adiPdi">ADI/PDI</label>
+                    <input id="adiPdi" name="adiPdi" type="text" placeholder="Number" required />
+                    <div class="error" id="err-adiPdi" aria-hidden="true"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="languages">Languages</label>
+                    <input id="languages" name="languages" type="text" placeholder="Exp: English, Spanish" required />
+                    <div class="error" id="err-languages" aria-hidden="true"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="areaCover">Area Cover</label>
+                    <input id="areaCover" name="areaCover" type="text" placeholder="your area" required />
+                    <div class="error" id="err-areaCover" aria-hidden="true"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="carRegistration"> Car Registration</label>
+                    <input id="carRegistration" name="carRegistration" type="text"
+                      placeholder="your car registration number" required />
+                    <div class="error" id="err-carRegistration" aria-hidden="true"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="carModel"> Car Model</label>
+                    <input id="carModel" name="carModel" type="text" placeholder="Exp: Toyota Corolla/ 2012" required />
+                    <div class="error" id="err-carModel" aria-hidden="true"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="carType"> Car Type</label>
+                    <input id="carType" name="carType" type="text" placeholder="Exp: SUV, Sedan" required />
+                    <div class="error" id="err-carType" aria-hidden="true"></div>
+                  </div>
+
+                  <div class="field full">
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" placeholder="you@example.com" required />
+                    <div class="error" id="err-email" aria-hidden="true"></div>
+                  </div>
+
+                  <div class="field full">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Optional: Write your message, question..."
+                      required minlength="10"></textarea>
+                    <div class="error" id="err-message" aria-hidden="true"></div>
+                    <p style="color: rgb(112, 112, 112); font-size: 12px; text-align: center;">By submitting this form
+                      you are accepting our terms and
+                      conditions.</p>
+                  </div>
+
+                  <div class="actions full">
+                    <button type="button" class="btn-ghost" id="resetBtn">Reset</button>
+                    <button type="submit" class="btn-primary">Submit</button>
+                  </div>
+
+                  <!-- success / server feedback -->
+                  <div id="formNotice" class="notice success" role="status" aria-live="polite" style="display:none;">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
+
 </html>
