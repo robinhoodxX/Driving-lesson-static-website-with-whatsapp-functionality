@@ -125,14 +125,13 @@
   margin-top: 100px;
   margin-bottom: 100px;
   padding: 50px;
-  background-color: #434343;
 }
 
 .aboutusbk h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(255, 255, 255);
+  color: rgb(71, 71, 71);
   font-size: 34px;
   font-weight: bold;
   border-radius: 50px;
@@ -151,17 +150,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-.aboutuscontent p {
-  color: rgb(255, 255, 255);
-}
-
-.aboutusimg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
 }
 
 /* Dash section -------------------------------------*/
