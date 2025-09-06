@@ -26,6 +26,14 @@
       padding-bottom: env(safe-area-inset-bottom);
     }
 
+    .adipdisec {
+      background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(0, 181, 85));
+    }
+
+    .adipdi {
+      display: flex;
+      flex-direction: column;
+    }
 
     .item {
       background-color: rgb(0, 164, 77);
@@ -60,6 +68,32 @@
       max-width: 80%;
       background-color: rgb(0, 181, 85);
       color: rgb(255, 255, 255);
+      border-top-right-radius: 40px;
+      border-bottom-left-radius: 40px;
+
+    }
+
+    .intro {
+      color: rgb(49, 49, 49);
+      padding: 20px;
+      font-size: 18px;
+      background-color: aliceblue;
+      border-radius: 10px;
+    }
+
+    .whatweoffer {
+      color: rgb(49, 49, 49);
+      padding: 20px;
+      margin-top: 20px;
+      font-size: 18px;
+      background-color: aliceblue;
+      border-radius: 10px;
+    }
+
+    .whatweoffer ul {
+      list-style-type: disc;
+      margin-top: 20px;
+      margin-left: 20px;
     }
 
     .arrow-down {
@@ -89,6 +123,35 @@
         max-width: 95%;
         padding: 20px;
       }
+
+      .whatweoffer {
+        font-size: 14px;
+      }
+
+      .intro p {
+        font-size: 11px;
+      }
+    }
+
+    @media screen and (max-width: 425px) {
+
+      .whatweoffer ul {
+        font-size: 11px;
+      }
+
+      .adititle {
+        font-size: 25px;
+        padding: 30px 20px;
+        text-align: center;
+      }
+
+      .whatweoffer {
+        font-size: 14px;
+      }
+
+      .intro p {
+        font-size: 11px;
+      }
     }
 
     @media screen and (max-width: 414px) {
@@ -111,16 +174,19 @@
       }
     }
 
-
     @media screen and (max-width: 320px) {
       .item {
         font-size: 12px;
       }
 
       .adititle {
-        font-size: 20px;
+        font-size: 15px;
         padding: 20px 20px;
         text-align: center;
+      }
+
+      .whatweoffer {
+        font-size: 12px;
       }
     }
   </style>
@@ -133,41 +199,53 @@
       <div class="dropdown">
         <button class="dropbtn">☰</button>
         <ul class="list">
-          <li class="item"><a href="#aboutusbk" class="nav-link">Become a driving instructor</a></li>
+          <li class="item"><a href="https://wa.me/447746243128" target="_blank"
+              style="text-decoration: none; color: rgb(255, 255, 255);">Call Us</a></li>
         </ul>
       </div>
     </div>
-    <section>
-      <div>
-        <h1 class="adititle">Join Our Driving School Team ADIs & PDIs Wanted!</h1>
+    <section class="adipdisec">
+      <h1 class="adititle">Join Our Driving School Team ADIs & PDIs Wanted!</h1>
+      <div class="adipdi">
         <div class="container1">
-          <p>
-            Are you a qualified ADI or a trainee PDI looking for the right school to support and grow with?
-            We’re expanding our team and would love to have you on board!
-          </p>
+          <div class="intro">
+            <p>
+              Are you a qualified ADI or a trainee PDI looking for the right school to support and grow with?
+              We’re expanding our team and would love to have you on board!
+            </p>
+          </div>
           <div class="dash"></div>
-          <h4>What we offer:</h4>
-          <ul>
-            <li>Competitive pupil supply – no long waiting around for work</li>
-            <li>Flexible working hours to suit your lifestyle</li>
-            <li>Friendly, professional team environment</li>
-            <li>Ongoing support to help you develop as an instructor</li>
-            <li>Opportunities for career growth within the school</li>
-          </ul>
+          <div class="whatweoffer">
+            <h4><img src="https://img.icons8.com/?size=100&id=2Tv2g4T4Wtu0&format=png&color=000000" alt="drive"
+                style="width:30px; height:30px; vertical-align: middle; margin-right: 10px;">What we offer:</h4>
+            <ul>
+              <li>Competitive pupil supply – no long waiting around for work</li>
+              <li>Flexible working hours to suit your lifestyle</li>
+              <li>Friendly, professional team environment</li>
+              <li>Ongoing support to help you develop as an instructor</li>
+              <li>Opportunities for career growth within the school</li>
+            </ul>
+          </div>
 
-          <h4>What we’re looking for:</h4>
-          <ul>
-            <li>Enthusiastic and reliable ADIs or PDIs</li>
-            <li>A passion for teaching and helping learners succeed</li>
-            <li>Good communication and people skills</li>
-            <li>Professionalism and a positive attitude</li>
-          </ul>
+          <div class="whatweoffer">
+            <h4><img src="https://img.icons8.com/?size=100&id=2Tv2g4T4Wtu0&format=png&color=000000" alt="drive"
+                style="width:30px; height:30px; vertical-align: middle; margin-right: 10px;">What we’re looking for:
+            </h4>
+            <ul>
+              <li>Enthusiastic and reliable ADIs or PDIs</li>
+              <li>A passion for teaching and helping learners succeed</li>
+              <li>Good communication and people skills</li>
+              <li>Professionalism and a positive attitude</li>
+            </ul>
+          </div>
           <div class="dash"></div>
-          <p>
-            Whether you’re newly qualified or still in training, we’ll provide the support and pupils you need to
-            succeed.
-            Get in touch today to find out how you can become part of our growing driving school family!
-          </p>
+          <div class="intro">
+            <p>
+              Whether you’re newly qualified or still in training, we’ll provide the support and pupils you need to
+              succeed.
+              Get in touch today to find out how you can become part of our growing driving school family!
+            </p>
+          </div>
         </div>
         <div class="arrow-down"></div>
         <div>

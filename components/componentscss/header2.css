@@ -125,18 +125,17 @@
   margin-top:100px;
   margin-bottom: 100px;
   padding: 50px;
+  background-color: #434343;
 }
 
 .aboutusbk h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 20px;
-  color: rgb(50, 50, 50);
+  color: rgb(255, 255, 255);
   font-size: 34px;
   font-weight: bold;
   border-radius: 50px;
-  height: 200px;
 }
 
 .aboutusbk p {
@@ -145,6 +144,24 @@
   font-size: 20px;
   text-align: left;
   line-height: 1.5;
+}
+
+.aboutuscontent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutuscontent p {
+  color: rgb(255, 255, 255);
+}
+
+.aboutusimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
 /* Dash section -------------------------------------*/
