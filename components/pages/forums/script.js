@@ -10,6 +10,10 @@ document.querySelectorAll("form[id^='contactForm']").forEach(form => {
     const firstName = form.querySelector("[name='firstName']");
     const phone = form.querySelector("[name='phone']");
     const postcode = form.querySelector("[name='postcode']");
+    const adiPdi = form.querySelector("[name='adiPdi']");
+    const languages = form.querySelector("[name='languages']");
+    const areaCover = form.querySelector("[name='areaCover']");
+    const carRegistration = form.querySelector("[name='carRegistration']");
     const email = form.querySelector("[name='email']");
     const carType = form.querySelector("[name='carType']");
     const carModel = form.querySelector("[name='carModel']");
@@ -52,6 +56,18 @@ document.querySelectorAll("form[id^='contactForm']").forEach(form => {
     }
     if (carModel && carModel.value.trim() !== "") {
       message += "Car Model: " + carModel.value.trim() + "\n";
+    }
+    if (adiPdi && adiPdi.value.trim() !== "") {
+      message += "ADI/PDI: " + adiPdi.value.trim() + "\n";
+    }
+    if (languages && languages.value.trim() !== "") {
+      message += "Languages: " + languages.value.trim() + "\n";
+    }
+    if (areaCover && areaCover.value.trim() !== "") {
+      message += "Area Cover: " + areaCover.value.trim() + "\n";
+    }
+    if (carRegistration && carRegistration.value.trim() !== "") {
+      message += "Car Registration: " + carRegistration.value.trim() + "\n";
     }
 
     message += "Message: " + messageField.value.trim();
