@@ -11,6 +11,204 @@
   <link rel='stylesheet' href='styles.css'>
   <link rel='stylesheet' href='forums/forumbeginner.css'>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #2E8B57, #90EE90);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .poster {
+      background: white;
+      width: 1000px;
+      margin-top: 30px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .header {
+      background: linear-gradient(45deg, #228B22, #32CD32);
+      padding: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .logo {
+      color: white;
+      font-size: 48px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      color: #F0F8FF;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .instructor-section {
+      padding: 30px;
+      text-align: center;
+      background: #F8F8FF;
+    }
+
+    .instructor-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4169E1, #87CEEB);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .instructor-name {
+      font-size: 24px;
+      color: #2E8B57;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .instructor-title {
+      color: #666;
+      font-size: 16px;
+    }
+
+    .car-section {
+      padding: 20px 30px;
+      background: #F0F8FF;
+      text-align: center;
+    }
+
+    .car-placeholder {
+      width: 100%;
+      height: auto;
+      background: linear-gradient(45deg, #E6E6FA, #D8BFD8);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      margin-bottom: 15px;
+      border: 3px dashed #228B22;
+    }
+
+    .car-placeholder-img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 15px;
+    }
+
+    .car-info {
+      color: #2E8B57;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .description {
+      padding: 30px;
+      background: white;
+      color: #333;
+      line-height: 1.6;
+      font-size: 16px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .features {
+      padding: 30px;
+      background: #F0FFF0;
+    }
+
+    .features-title {
+      text-align: center;
+      color: #228B22;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .feature {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-3px);
+    }
+
+    .feature-icon {
+      font-size: 24px;
+      margin-right: 12px;
+      color: #228B22;
+    }
+
+    .feature-text {
+      color: #333;
+      font-weight: 500;
+    }
+
+    .contact {
+      background: linear-gradient(45deg, #228B22, #32CD32);
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .contact-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .contact-info {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    .decorative-element {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    /* Separator div above ----------------------------------------- */
+    .container {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
     .item {
       background-color: rgb(0, 164, 77);
       -webkit-border-radius: 10px;
@@ -21,47 +219,16 @@
       transition: all 0.3s ease;
     }
 
-    .forumheader {
-      background-color: rgb(0, 181, 85);
-      padding: 10px 0;
-      text-align: center;
-      margin-top: 40px;
-      margin-left: 40px;
-      margin-right: 40px;
-      height: auto;
-      border-top-left-radius: 40px;
-      border-top-right-radius: 40px;
+    .item:hover {
+      background-color: rgb(0, 225, 112);
+      color: rgb(255, 255, 255);
+      -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      -webkit-transition: all 0.3s ease;
+      /* Safari/iOS support */
+      transition: all 0.3s ease;
     }
 
-    .forumtitle {
-      color: white;
-      font-size: 30px;
-      font-weight: bold;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    .forumdesc {
-      background-color: aliceblue;
-      font-size: 18px;
-      padding: 40px;
-      margin: 0 20px;
-      border-radius: 10px;
-      text-align: justify;
-    }
-
-    .arrow-down {
-      margin: 0 auto;
-      margin-bottom: 20px;
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      /* left slant */
-      border-right: 10px solid transparent;
-      /* right slant */
-      border-top: 10px solid rgb(255, 255, 255);
-      /* color of arrow */
-    }
     .contact-button {
       background-color: #00b555;
       color: white;
@@ -72,10 +239,28 @@
       cursor: pointer;
       margin-left: 10px;
     }
+
+    @media screen and (max-width: 768px) {
+      .poster {
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      .poster {
+        max-width: 80%;
+        margin: 10px auto;
+      }
+
+      .container {
+        max-width: 80%;
+    }
+  }
   </style>
 </head>
 
 <body>
+
   <div>
     <div class="container">
       <h3 class="title"><a href="/drivinglesson/index.html" class="titlea">Home</a></h3>
@@ -87,38 +272,96 @@
         </ul>
       </div>
     </div>
-    <div class="forumheader">
-      <h5 class="forumtitle">Become a Driving Instructor</h5>
-      <div>
-        <p class="forumdesc">Start a Rewarding Career as a Driving Instructor with Our Driving School! 🚗
-          Are you passionate about driving and love helping others learn? Turn that passion into a rewarding career by
-          becoming a
-          certified driving instructor with our trusted driving school.</p>
+    <div class="poster">
+      <div class="header">
+        <div class="decorative-element"></div>
+        <div class="logo">GREEN PASS</div>
+        <div class="tagline">DRIVING SCHOOL</div>
       </div>
-      <div class="arrow-down"></div>
-      <div>
-        <p class="forumdesc">We offer full training, flexible hours, and the opportunity to be your own boss while
-          making a real difference in
-          people’s lives. Whether you're looking for a career change or a fresh start, we’ll guide you every step of the
-          way —
-          from qualification to the open road.</p>
+
+      <div class="instructor-section">
+        <div class="instructor-avatar">👨‍🏫</div>
+        <div class="instructor-name">Become a Driving Instructor</div>
+        <div class="instructor-title">Professional & Experienced</div>
       </div>
-      <div class="arrow-down"></div>
-      <div>
-        <p class="forumdesc">
-          ✅ Full instructor training provided<br />
-          ✅ High earning potential<br />
-          ✅ Work-life balance & flexible schedule<br />
-          ✅ Join a supportive and friendly team<br />
-          ✅ Make a positive impact in your community<br />
-        </p>
+
+      <div class="car-section">
+        <div class="car-placeholder"><img src="/components/assets/dl3.png" alt="Modern Training Vehicle" class="car-placeholder-img"></div>
+        <div class="car-info">Modern Training Vehicle</div>
       </div>
-      <div class="arrow-down"></div>
-      <div>
-        <p class="forumdesc">Take control of your future — become a driving instructor today!
-          📞 Contact us now to learn more or start your journey
-          <a href="https://wa.me/447746243128"><button class="contact-button">Contact Us</button></a>
-        </p>
+
+      <div class="description">
+        Start a Rewarding Career as a Driving Instructor with Our Driving School!
+        Are you passionate about driving and love helping others learn? Turn that passion into a rewarding career by
+        becoming a certified driving instructor with our trusted driving school.
+        We offer full training, flexible hours, and the opportunity to be your own boss while
+        making a real difference in
+        people’s lives. Whether you're looking for a career change or a fresh start, we’ll guide you every step of the
+        way —
+        from qualification to the open road.<br />
+        <br />
+        <ul style="text-align: left; list-style: none;">
+          <li>✅ Full instructor training provided</li>
+          <li>✅ High earning potential</li>
+          <li>✅ Work-life balance & flexible schedule</li>
+          <li>✅ Join a supportive and friendly team</li>
+          <li>✅ Make a positive impact in your community</li>
+        </ul>
+        <br />
+        Take control of your future — become a driving instructor today!<br />
+        📞 Contact us now to learn more or start your journey
+        <a href="https://wa.me/447746243128"><button class="contact-button">Contact Us</button></a>
+        <br /><br />
+        "The driving school that builds safe and confident drivers for life! Pass faster, drive smarter. No more L
+        plates
+        let's make it happen. Safe driving starts with the right driving school. Driving lessons made simple, safe and
+        stress free with our team of expert and experienced driving instructors. Don't just dream of driving master it
+        with
+        us."
+      </div>
+
+      <div class="features">
+        <div class="features-title">Why Choose Green Pass?</div>
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature-icon">✅</div>
+            <div class="feature-text">High Pass Rates</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🎯</div>
+            <div class="feature-text">Expert Instructors</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🚗</div>
+            <div class="feature-text">Modern Vehicles</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">💰</div>
+            <div class="feature-text">Competitive Prices</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">⏰</div>
+            <div class="feature-text">Flexible Timing</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🛡️</div>
+            <div class="feature-text">Safe Learning</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📚</div>
+            <div class="feature-text">Theory Support</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🎉</div>
+            <div class="feature-text">Stress-Free Lessons</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="contact-title">Ready to Start Driving?</div>
+        <div class="contact-info">📞 Call us today for your first lesson!</div>
+        <div class="contact-info">🌐 www.drivinglessonsgreen.co.uk</div>
       </div>
     </div>
 </body>
