@@ -10,17 +10,20 @@
 
 .carousel-track {
   display: flex;
-  animation: scroll-left 8s linear infinite;
+  animation: scroll-left 15s linear infinite;
+  width: calc(200%);
+  /* Ensure enough width for seamless loop */
+  will-change: transform;
+  /* Optimize for animations */
 }
 
 .carousel-track.reverse {
   display: flex;
   animation: scroll-right 15s linear infinite;
-  transition: all 0.5s ease-in-out;
-}
-
-.carousel-track.reverse:hover {
-  transform: scale(1.05);
+  width: calc(200%);
+  /* Ensure enough width for seamless loop */
+  will-change: transform;
+  /* Optimize for animations */
 }
 
 .carousel:hover .carousel-track {
@@ -58,6 +61,8 @@
 .pic1 {
   flex: 0 0 auto;
   height: 300px;
+  width: 300px;
+  /* Fixed width for consistent sizing */
   margin: 0 10px;
   font-weight: bold;
   transition: transform 0.5s ease-in-out;
@@ -99,6 +104,7 @@
     height: 200px;
   }
 }
+
 /* ------------------------------------------   */
 @media screen and (max-width: 320px) {
   .card {
