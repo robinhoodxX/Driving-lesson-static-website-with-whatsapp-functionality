@@ -242,6 +242,36 @@
   text-align: right;
 }
 
+/* Bottom Services Section -------------------------------*/
+.bottomservicessec {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background-color: #333333;
+}
+
+.bottomservices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  list-style-type: none;
+  padding: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #333333;
+}
+
+.bottomservices li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.bottomservices li a:hover {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 768px) {
 
   .vehicle,

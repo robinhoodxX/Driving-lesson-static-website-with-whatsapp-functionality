@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terms & Conditions</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/components/assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/components/assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/components/assets/favicon_io/favicon-16x16.png">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-1: #0f8a4f;
+      --bg-2: #6adf8e;
+      --accent: #083318;
+      --muted: #6b726f;
+      --card-bg: #fff;
+      --radius: 14px;
+      --container-max: 1100px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: auto
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+      color: var(--accent);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 36px 18px;
+    }
+
+    .page {
+      max-width: var(--container-max);
+      margin: 0 auto
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.98));
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 12px 30px rgba(4, 50, 20, 0.16);
+      backdrop-filter: blur(6px);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px
+    }
+    @media (max-width:330px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px
+      }
+    }
+
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #e6fff0, #f7fff6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 18px;
+      box-shadow: 0 6px 18px rgba(11, 107, 62, 0.08)
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 20px
+    }
+
+    p.lead {
+      margin: 12px 0 18px;
+      color: #083318;
+      line-height: 1.6
+    }
+
+    .meta {
+      display: flex;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+      align-items: center
+    }
+
+    .btn {
+      background: var(--muted);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px
+    }
+
+    @media (max-width:980px) {
+      .content {
+        grid-template-columns: 1fr
+      }
+
+      .meta {
+        flex-wrap: wrap
+      }
+    }
+
+    .terms {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 6px 18px rgba(4, 50, 20, 0.04);
+      border: 1px solid rgba(11, 107, 62, 0.04)
+    }
+
+    .terms h2 {
+      margin: 8px 0;
+      font-size: 16px;
+      color: var(--accent)
+    }
+
+    .terms p,
+    .terms ul {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5
+    }
+
+    .terms ul {
+      padding-left: 18px
+    }
+
+    .aside {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(11, 107, 62, 0.04);
+      box-shadow: 0 6px 14px rgba(4, 50, 20, 0.04)
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    footer {
+      margin-top: 16px;
+      color: rgba(5, 41, 24, 0.85);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    a {
+      color: var(--bg-1);
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .toc {
+      margin: 8px 0 14px 0;
+      padding: 0 0 12px 0;
+      border-bottom: 1px dashed rgba(11, 107, 62, 0.06)
+    }
+
+    .toc a {
+      display: inline-block;
+      margin-right: 12px;
+      color: var(--muted);
+      font-size: 13px
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="panel">
+      <div class="header">
+        <div class="logo" aria-hidden="true"><img src="/components/assets/icon.png" alt="DrivingLesson Logo"
+            style="width: auto; height: 56px;"></div>
+        <div>
+          <h1>Terms & Conditions</h1>
+          <div class="meta"><span class="muted">Last updated:</span>&nbsp;<span id="updated">—</span></div>
+        </div>
+        <div style="margin-left:auto">
+          <button class="btn" onclick="window.print()">Print</button>
+        </div>
+      </div>
+
+      <p class="lead">These Terms & Conditions ("Terms") govern your use of DrivingLesson services and website. Please
+        read them carefully before booking lessons or otherwise interacting with our services.</p>
+
+      <div class="toc" aria-hidden="true">
+        <a href="#overview">Overview</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Booking</a>
+        <a href="#cancellation">Cancellation</a>
+        <a href="#liability">Liability</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#contact-info">Contact</a>
+      </div>
+
+      <div class="content">
+        <section class="terms" aria-labelledby="overview">
+          <h2 id="overview">1. Acceptance</h2>
+          <p>By using our website, booking lessons, or engaging with our instructors you accept and agree to these
+            Terms. If you do not agree, do not use our services.</p>
+
+          <h2 id="services">2. Services</h2>
+          <p>DrivingLesson provides driver training, simulator sessions, progress tracking and related educational
+            services. Specific deliverables, schedules and fees are described in each booking confirmation.</p>
+
+          <h2 id="booking">3. Booking & Payment</h2>
+          <ul>
+            <li>Bookings are confirmed once payment or a valid payment arrangement is received.</li>
+            <li>Prices and any applicable taxes will be shown at the time of booking.</li>
+            <li>We accept payment via the methods listed on our site; refusing or failing payment may result in
+              cancellation.</li>
+            <li>Clients are responsible for ensuring booking details (time, location, instructor) are correct at the
+              time of confirmation.</li>
+          </ul>
+
+          <h2 id="cancellation">4. Cancellation & Rescheduling</h2>
+          <ul>
+            <li>Clients should notify us as early as possible to reschedule or cancel.</li>
+            <li>Cancellations within 24 hours of a lesson may incur a fee as specified in the booking terms.</li>
+            <li>We may cancel lessons due to instructor illness, vehicle issues or unsafe conditions; in such cases we
+              will offer a full refund or rebooking.</li>
+          </ul>
+
+          <h2 id="liability">5. Liability & Safety</h2>
+          <p>We take safety seriously. Instructors are qualified and vehicles are maintained. To the fullest extent
+            permitted by law, DrivingLesson's liability for any claim arising from our services is limited to the fees
+            paid for the affected service. Nothing in these Terms limits liability for death or personal injury caused
+            by negligence where such limitation is not permitted by law.</p>
+
+          <h2 id="conduct">6. Client Responsibilities</h2>
+          <ul>
+            <li>Clients must follow instructor instructions and local laws during lessons.</li>
+            <li>Clients must disclose any medical or licensing information that may affect training.</li>
+            <li>Clients must arrive on time and with any documentation required by the booking.</li>
+          </ul>
+
+          <h2 id="privacy">7. Privacy</h2>
+          <p>We process personal data in accordance with our Privacy Policy. By using our services you consent to the
+            collection and use of data as described in that policy.</p>
+
+          <h2 id="intellectual">8. Intellectual Property</h2>
+          <p>All content on the DrivingLesson site — text, graphics, logos and training materials — is owned or licensed
+            by DrivingLesson and protected by copyright and other laws. You may use materials only for personal,
+            non-commercial purposes unless expressly permitted.</p>
+
+          <h2 id="changes">9. Changes to Terms</h2>
+          <p>We may update these Terms from time to time. We will publish the updated date at the top of this page.
+            Continued use after changes indicates acceptance.</p>
+
+          <h2 id="governing">10. Governing Law</h2>
+          <p>These Terms are governed by the laws of the jurisdiction in which DrivingLesson operates. Any dispute will
+            be subject to the competent courts of that jurisdiction.</p>
+
+          <h2 id="contact-info">11. Contact</h2>
+          <p>If you have questions about these Terms or our services, contact us at <a
+              href="mailto:info@drivinglesson.example">greenlgpsom@gmail.com</a> or use the contact page on our
+            site.</p>
+        </section>
+
+        <aside class="aside" aria-label="Quick info">
+          <div class="card">
+            <strong>Booking help</strong>
+            <p class="muted" style="margin:6px 0 0 0;font-size:13px">Need to change a booking? Visit the contact page or
+              call your instructor directly (details in your booking confirmation).</p>
+          </div>
+
+          <div class="card">
+            <strong>Refunds & Credits</strong>
+            <p class="muted" style="margin:6px 0 0 0;font-size:13px">Refunds are handled per the booking terms. Credits
+              may be issued at our discretion for cancelled lessons due to instructor or vehicle issues.</p>
+          </div>
+
+          <div class="card">
+            <strong>Safety</strong>
+            <p class="muted" style="margin:6px 0 0 0;font-size:13px">All instructors hold valid certifications. If you
+              have special medical needs inform us before booking.</p>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        <div>Need more help? <a href="/index.html#contact" onclick="return true">Contact us</a></div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // dynamic updated and year (scoped to avoid redeclaration errors)
+    (function () {
+      const updatedEl = document.getElementById('updated');
+      const today = new Date();
+      updatedEl.textContent = today.toLocaleDateString();
+      document.getElementById('year').textContent = today.getFullYear();
+    })();
+  </script>
+</body>
+
+</html>
