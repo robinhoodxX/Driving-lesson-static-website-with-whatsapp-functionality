@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery — DrivingLesson</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-1: #0f8a4f;
+      --bg-2: #6adf8e;
+      --g-light:#e6fff0;
+      --g-mid:#6adf8e;
+      --g-dark:#0f8a4f;
+      --accent:#083318;
+      --muted:#586157;
+      --card:#ffffff;
+      --radius:14px;
+      --container:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:auto;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--accent);-webkit-font-smoothing:antialiased}
+    body{background: linear-gradient(135deg, var(--bg-1), var(--bg-2));padding:28px}
+
+    .page{max-width:var(--container);margin:0 auto}
+    .panel{background:linear-gradient(180deg,rgba(255,255,255,0.98),#fff);border-radius:18px;padding:20px 22px;box-shadow:0 18px 50px rgba(6,40,20,0.06)}
+
+    /* Hero */
+    .hero{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+    .hero-left{flex:1;min-width:240px}
+    .badge{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--g-light),#f2fff7);color:var(--accent);font-weight:700;margin-bottom:10px}
+    h1{margin:0;font-size:24px}
+    .lead{margin-top:8px;color:var(--muted);font-size:14px;max-width:64ch}
+
+    .hero-right{display:flex;gap:10px;align-items:center;margin-left:auto}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700;background-color: var(--muted);color:#fff;box-shadow:0 10px 30px rgba(6,40,20,0.08)}
+    .btn.ghost{background:transparent;border:1px solid rgba(11,107,62,0.06);color:var(--accent)}
+
+    /* Gallery grid */
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+    @media (max-width:1100px){ .grid{grid-template-columns:repeat(3,1fr)} }
+    @media (max-width:780px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:420px){ .grid{grid-template-columns:1fr} }
+
+    .tile{
+      position:relative; overflow:hidden; border-radius:12px; background:#f7fff8;
+      border:1px solid rgba(11,107,62,0.04); box-shadow:0 8px 20px rgba(6,40,20,0.04); cursor:pointer;
+      display:block; text-decoration:none; color:inherit;
+    }
+    .tile img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .45s cubic-bezier(.2,.9,.2,1) filter .3s}
+    .tile:hover img{transform:scale(1.06) rotate(.2deg); filter:brightness(.98)}
+    .tile .meta{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,0.9);padding:8px 10px;border-radius:10px;font-size:13px;color:var(--accent);font-weight:700;box-shadow:0 8px 18px rgba(6,40,20,0.06)}
+
+    /* Modal / lightbox */
+    .lightbox{
+      position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(2,20,12,0.6),rgba(2,20,12,0.6));z-index:9999;
+      padding:24px;
+    }
+    .lightbox.open{display:flex}
+    .lb-inner{max-width:1100px;width:100%;display:flex;gap:14px;align-items:center}
+    .lb-img{flex:1;background:#fff;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:12px}
+    .lb-img img{max-width:100%;max-height:80vh;object-fit:contain;display:block}
+    .lb-side{width:320px;max-width:38%;display:flex;flex-direction:column;gap:12px}
+    .lb-title{font-size:18px;font-weight:800;color:#fff}
+    .lb-desc{color:rgba(255,255,255,0.9);font-size:14px}
+    .close-btn{background:transparent;border:0;color:#fff;font-size:18px;padding:10px;cursor:pointer}
+    .nav-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.06);border:0;color:#fff;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    .nav-btn.left{left:18px}
+    .nav-btn.right{right:18px}
+
+    /* thumbnails strip (mobile friendly) */
+    .thumbs{display:flex;gap:8px;overflow:auto;padding:6px;border-radius:10px;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))}
+    .thumbs img{height:64px;width:88px;object-fit:cover;border-radius:8px;opacity:.9;cursor:pointer;border:2px solid transparent}
+    .thumbs img.active{border-color:var(--g-mid);opacity:1}
+
+    /* subtle animated gradient accent */
+    .accent-band{height:6px;border-radius:999px;margin-top:12px;background:linear-gradient(90deg,var(--g-light),var(--g-mid),var(--g-dark));animation:slide 10s linear infinite}
+    @keyframes slide{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    /* small helpers */
+    .muted{color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="panel">
+      <div class="hero">
+        <div class="hero-left">
+          <div class="badge">Gallery</div>
+          <h1>Moments from our lessons & events</h1>
+          <div class="lead">Photos and snapshots of vehicles, students and simulator sessions. Click any image to open a full view and navigate the gallery.</div>
+          <div class="accent-band" aria-hidden="true"></div>
+        </div>
+        <div class="hero-right">
+          <button class="btn" onclick="location.href='/components/pages/contactus/ContactUs.html'">Book a lesson</button>
+          <button class="btn ghost" onclick="window.open('https://wa.me/447746243128','_blank')">WhatsApp</button>
+        </div>
+      </div>
+
+      <!-- Gallery grid -->
+      <div class="grid" id="galleryGrid" aria-live="polite">
+        <!-- Replace src paths with your actual images in /components/assets/gallery/ -->
+        <a class="tile" data-index="0" data-title="Intro lesson" data-desc="Our car and first lesson">
+          <img src="/components/assets/gallery/img1.jpg" alt="Intro lesson">
+          <div class="meta">Intro lesson</div>
+        </a>
+
+        <a class="tile" data-index="1" data-title="Mock test" data-desc="Exam style practice session">
+          <img src="/components/assets/gallery/img2.jpg" alt="Mock test">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="2" data-title="Simulator session" data-desc="Hazard perception simulator">
+          <img src="/components/assets/gallery/img3.jpg" alt="Simulator session">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="3" data-title="Night driving" data-desc="Night skills training">
+          <img src="/components/assets/gallery/img4.jpg" alt="Night driving">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="4" data-title="Refresher course" data-desc="Returning driver session">
+          <img src="/components/assets/gallery/img5.jpg" alt="Refresher course">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="5" data-title="Advanced training" data-desc="Defensive driving techniques">
+          <img src="/components/assets/gallery/img6.jpg" alt="Advanced training">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="6" data-title="Onroad practice" data-desc="Real route practice">
+          <img src="/components/assets/gallery/img7.jpg" alt="Onroad practice">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="7" data-title="Pass day" data-desc="Celebrating a pass!">
+          <img src="/components/assets/gallery/img8.jpg" alt="Pass day">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="8" data-title="Pass day" data-desc="Celebrating a pass!">
+          <img src="/components/assets/gallery/img9.jpg" alt="Pass day">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="9" data-title="Pass day" data-desc="Celebrating a pass!">
+          <img src="/components/assets/gallery/img10.jpg" alt="Pass day">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="10" data-title="Pass day" data-desc="Celebrating a pass!">
+          <img src="/components/assets/gallery/img11.jpg" alt="Pass day">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="11" data-title="Pass day" data-desc="Celebrating a pass!">
+          <img src="/components/assets/gallery/img12.jpg" alt="Pass day">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="12" data-title="Pass day" data-desc="Celebrating a pass!">
+          <img src="/components/assets/gallery/img13.jpg" alt="Pass day">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="13" data-title="Pass day" data-desc="Celebrating a pass!">
+          <img src="/components/assets/gallery/img14.jpg" alt="Pass day">
+          <div class="meta">Pass day</div>
+
+        <a class="tile" data-index="14" data-title="Pass day" data-desc="Celebrating a pass!">
+          <img src="/components/assets/gallery/img15.jpg" alt="Pass day">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="15" data-title="Pass day" data-desc="Celebrating a pass!">
+          <img src="/components/assets/gallery/img16.jpg" alt="Pass day">
+          <div class="meta">Pass day</div>
+        </a>
+
+        <a class="tile" data-index="16" data-title="Pass day" data-desc="Celebrating a pass!">
+          <img src="/components/assets/gallery/img17.jpg" alt="Pass day">
+          <div class="meta">Pass day</div>
+        </a>
+      </div>
+
+      <footer style="margin-top:18px;display:flex;justify-content:space-between;align-items:center">
+        <div class="muted">Photos are from students who received driving lessons certificate.</div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Lightbox / modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image viewer">
+    <button class="nav-btn left" id="prevBtn" aria-label="Previous image">‹</button>
+    <div class="lb-inner" role="document">
+      <div class="lb-img" id="lbImageWrap"><img id="lbImg" src="" alt=""></div>
+      <div class="lb-side">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <div class="lb-title" id="lbTitle"></div>
+            <div class="muted" id="lbIndex" style="margin-top:6px;font-size:13px"></div>
+          </div>
+          <button class="close-btn" id="closeBtn" aria-label="Close">✕</button>
+        </div>
+        <div class="lb-desc" id="lbDesc"></div>
+        <div style="margin-top:auto">
+          <div style="font-size:13px;color:rgba(255,255,255,0.85)">Share</div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a class="btn ghost" id="shareWhats" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.08)">WhatsApp</a>
+            <a class="btn ghost" id="shareLink" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.08)">Copy link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="nav-btn right" id="nextBtn" aria-label="Next image">›</button>
+  </div>
+
+  <script>
+    (function () {
+      const tiles = Array.from(document.querySelectorAll('.tile'));
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbTitle = document.getElementById('lbTitle');
+      const lbDesc = document.getElementById('lbDesc');
+      const lbIndex = document.getElementById('lbIndex');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const closeBtn = document.getElementById('closeBtn');
+      const shareWhats = document.getElementById('shareWhats');
+      const shareLink = document.getElementById('shareLink');
+
+      let current = 0;
+      // Build array of image data
+      const items = tiles.map(t => {
+        const img = t.querySelector('img');
+        return {
+          src: img ? img.getAttribute('src') : '',
+          alt: img ? img.getAttribute('alt') : '',
+          title: t.dataset.title || '',
+          desc: t.dataset.desc || ''
+        };
+      });
+
+      function openLightbox(index) {
+        current = (index + items.length) % items.length;
+        const it = items[current];
+        lbImg.src = it.src;
+        lbImg.alt = it.alt || it.title || 'Gallery image';
+        lbTitle.textContent = it.title || '';
+        lbDesc.textContent = it.desc || '';
+        lbIndex.textContent = `${current + 1} / ${items.length}`;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        // update share buttons
+        const pageUrl = location.origin + location.pathname + '#gallery-' + current;
+        shareWhats.href = `https://wa.me/447746243128?text=${encodeURIComponent(it.title + ' ' + pageUrl)}`;
+        shareLink.onclick = () => {
+          try {
+            navigator.clipboard.writeText(pageUrl);
+            shareLink.textContent = 'Copied';
+            setTimeout(()=> shareLink.textContent = 'Copy link',1200);
+          } catch(e){ alert('Copy failed'); }
+        };
+      }
+
+      function closeLightbox() {
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function showNext(n=1) { openLightbox(current + n); }
+
+      // tile click
+      tiles.forEach((t,i) => {
+        t.addEventListener('click', (e) => { e.preventDefault(); openLightbox(i); });
+      });
+
+      // nav
+      prevBtn.addEventListener('click', ()=> showNext(-1));
+      nextBtn.addEventListener('click', ()=> showNext(1));
+      closeBtn.addEventListener('click', closeLightbox);
+      // keyboard
+      document.addEventListener('keydown', (e) => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showNext(-1);
+        if (e.key === 'ArrowRight') showNext(1);
+      });
+      // click outside to close
+      lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+
+      // Preload images for smoother navigation
+      items.forEach(it=>{
+        const i = new Image(); i.src = it.src;
+      });
+
+      // support deep-link to a specific image: #gallery-2
+      (function checkHash(){
+        const m = location.hash.match(/^#gallery-(\d+)$/);
+        if (m) {
+          const idx = Number(m[1]);
+          if (!Number.isNaN(idx) && idx >= 0 && idx < items.length) openLightbox(idx);
+        }
+      })();
+
+    })();
+  </script>
+</body>
+</html>
