@@ -8,7 +8,7 @@
   height: 10%;
   margin: 0 auto;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.7), rgba(27, 255, 160, 0.3));
   backdrop-filter: blur(20px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: fixed;
@@ -24,8 +24,9 @@
 
 .titlea {
   text-decoration: none;
-  color: inherit;
+  color: #6bffa6;
   padding: 10px;
+  text-shadow: #000000 1px 1px 2px;
 }
 
 .titlea:hover {
@@ -44,7 +45,8 @@
 
 .list .nav-link {
   text-decoration: none;
-  color: inherit;
+  color: #ffffff;
+  text-shadow: #000000 1px 1px 2px;
 }
 
 .item {
