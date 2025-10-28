@@ -16,10 +16,12 @@
   width: 100%;
   z-index: 1000;
   border-radius: 0;
+  overflow: hidden;
 }
 
 .title {
   margin-right: auto;
+  overflow: hidden;
 }
 
 .titlea {
@@ -317,15 +319,13 @@
 
 .whatsapp-chatdiv {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 70px;
+  right: 80px;
   z-index: 1000;
 }
 
 .whatsapp-chat {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
   background-color: #25d366;
   border-radius: 10%;
   padding: 2px;
@@ -347,32 +347,21 @@
   transform: scale(0.95);
 }
 
-.tooltip-text {
-  visibility: hidden;
-  width: 160px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 20%;
-  left: -150%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.whatsapp-chat:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
-}
-
 @media screen and (max-width: 768px) {
-  .whatsapp-chat {
-    bottom: 12px;
-    right: 130px;
+  .whatsapp-chat img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tooltip-text {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .tooltip-text:hover {
+    visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -380,6 +369,7 @@
 
 .carousel {
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   position: relative;
   margin-bottom: 20px;
@@ -388,7 +378,7 @@
 
 .carousel-track {
   display: flex;
-  animation: scroll-left 15s linear infinite;
+  animation: scroll-left 30s linear infinite;
   width: calc(200%);
   /* Ensure enough width for seamless loop */
   will-change: transform;
@@ -397,7 +387,7 @@
 
 .carousel-track.reverse {
   display: flex;
-  animation: scroll-right 15s linear infinite;
+  animation: scroll-right 30s linear infinite;
   width: calc(200%);
   /* Ensure enough width for seamless loop */
   will-change: transform;
@@ -851,6 +841,7 @@
   background-clip: text;
   margin-bottom: 12px;
   line-height: 1.2;
+  overflow: hidden;
 }
 
 .package-header {
@@ -1058,6 +1049,23 @@
   margin-right: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .intensiveheading {
+    flex-direction: row;
+    text-align: center;
+  }
+
+  .intensiveheading img {
+    width: 100%;
+    margin: 0;
+  }
+
+  .intensiveheading h3 {
+    font-size: 28px;
+    padding: 20px;
+  }
+}
+
 /*--------------- Package Boxes Enhanced -------------*/
 .packages-grida {
   display: grid;
@@ -1065,6 +1073,7 @@
   gap: 24px;
   max-width: 1400px;
   width: 100%;
+  overflow: hidden;
 }
 
 .package-boxa {
@@ -1225,6 +1234,7 @@
   padding-bottom: 16px;
   border-bottom: 2px solid #e2e8f0;
   position: relative;
+  overflow: hidden;
 }
 
 .package-headera::after {
@@ -1253,6 +1263,7 @@
 
 .package-pricea {
   margin-bottom: 16px;
+  overflow: hidden;
 }
 
 .price-amounta {
@@ -1519,6 +1530,29 @@
 
 .vehApplybtn:hover {
   background-color: #45a049;
+}
+
+@media screen and (max-width: 768px) {
+  .instructor-vehicle-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .instructor-vehicle-text {
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .instructor-vehicle-container img {
+    width: 80%;
+    margin: 20px 0 32px 0;
+    border-radius: 35px;
+  }
+  .instructor-vehiclediv {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+  }
 }
 
 /*----------------- Learn to Drive gallery section-----------------------------*/
