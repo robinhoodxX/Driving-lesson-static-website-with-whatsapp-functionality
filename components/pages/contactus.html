@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Contact Us</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/components/assets/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/components/assets/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/components/assets/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -18,16 +18,10 @@
             --muted: #566157;
             --card: #ffffff;
             --radius: 12px;
-            --container: 1100px;
         }
 
         * {
             box-sizing: border-box
-        }
-
-        html,
-        body {
-            height: 100%
         }
 
         body {
@@ -35,13 +29,13 @@
             font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
             background: linear-gradient(135deg, var(--g1), var(--g2));
             -webkit-font-smoothing: antialiased;
+            height: auto;
             color: #072612;
             padding: 36px 18px;
         }
 
         .wrap {
-            max-width: var(--container);
-            margin: 0 auto
+            margin: 0 auto;
         }
 
         .panel {
@@ -50,6 +44,31 @@
             padding: 22px;
             box-shadow: 0 14px 40px rgba(4, 50, 20, 0.14);
             backdrop-filter: blur(6px);
+            height: 100vh;
+        }
+
+        @media (min-width:720px) {
+            .panel {
+                height: auto;
+            }
+        }
+
+        @media (min-width:425px) {
+            .panel {
+                height: auto;
+            }
+        }
+
+        @media (min-width:375px) {
+            .panel {
+                height: auto;
+            }
+        }
+
+        @media (min-width:320px) {
+            .panel {
+                height: auto;
+            }
         }
 
         .header {
@@ -105,16 +124,46 @@
             box-shadow: 0 8px 22px rgba(4, 50, 20, 0.04)
         }
 
+        @media (max-width:600px) {
+            form {
+                padding: 12px;
+            }
+        }
+
+        @media (max-width:320px) {
+            form {
+                width: 100%;
+            }
+        }
+
+        @media (max-width:300px) {
+            form {
+                width: 77%;
+            }
+        }
+
         .row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px
         }
 
+        @media (max-width:600px) {
+            .row {
+                grid-template-columns: 1fr
+            }
+        }
+
         .field {
             display: flex;
             flex-direction: column;
             margin-bottom: 10px
+        }
+
+        @media (max-width:300px) {
+            .field {
+                width: 74%;
+            }
         }
 
         label {
@@ -155,6 +204,20 @@
             margin-top: 6px
         }
 
+        @media (max-width:320px) {
+            .actions {
+                flex-direction: column;
+                align-items: stretch
+            }
+        }
+
+        @media (max-width:300px) {
+            .actions {
+                flex-direction: column;
+                align-items: stretch
+            }
+        }
+
         .btn {
             background: var(--g1);
             color: #fff;
@@ -186,11 +249,39 @@
             box-shadow: 0 8px 18px rgba(4, 50, 20, 0.04)
         }
 
+        @media (max-width:320px) {
+            .card {
+                width: 100%;
+            }
+        }
+
+        @media (max-width:300px) {
+            .card {
+                width: 76%;
+            }
+        }
+
         .info-item {
             display: flex;
             gap: 10px;
             align-items: flex-start;
             margin-bottom: 12px
+        }
+
+        @media (max-width:320px) {
+            .info-item {
+                font-size: 15px;
+                flex-direction: column;
+                align-items: flex-start
+            }
+        }
+
+        @media (max-width:300px) {
+            .info-item {
+                font-size: 15px;
+                flex-direction: column;
+                align-items: flex-start
+            }
         }
 
         .icon {
@@ -243,7 +334,7 @@
     <div class="wrap">
         <div class="panel" id="contact">
             <div class="header">
-                <div class="logo"><img src="components/assets/icon.png" alt="DrivingLesson Logo"
+                <div class="logo"><img src="../assets/icon.png" alt="DrivingLesson Logo"
                         style="width: auto; height: 56px;"></div>
                 <div>
                     <h1>Contact Us</h1>
@@ -254,7 +345,7 @@
 
             <div class="grid">
                 <main>
-                    <form id="contactForm" novalidate>
+                    <form class="contact-form" id="contactForm" novalidate>
                         <div class="row">
                             <div class="field">
                                 <label for="name">Full name</label>
@@ -321,8 +412,7 @@
                             <div class="icon">📞</div>
                             <div>
                                 <strong>Phone</strong>
-                                <div class="muted" style="font-size:13px"><a href="tel:+447746243128">+44 7746 243128</a>
-                                </div>
+                                <div class="muted" style="font-size:13px"><a href="tel:+447746243128">+44 7746243128</a></div>
                             </div>
                         </div>
 
@@ -330,16 +420,17 @@
                             <div class="icon">✉️</div>
                             <div>
                                 <strong>Email</strong>
-                                <div class="muted" style="font-size:13px"><a
-                                        href="mailto:greenlgpsom@gmail.com">greenlgpsom@gmail.com</a></div>
+                                <div class="muted" style="font-size:13px"><a href="mailto:greenlgpsom@gmail.com">greenlgpsom@gmail.com</a></div>
                             </div>
                         </div>
 
                         <div style="margin-top:8px">
-                            <div class="map" role="img" aria-label="Map placeholder">Map preview — replace with an embed
-                                if required</div>
-                        </div>
-                    </div>
+                                    <div class="map" role="img" aria-label="Map placeholder"><iframe
+                                            src="https://www.google.com/maps?q=loc:52.544392,-1.890825&z=18&hl=en&output=embed"
+                                            width="100%" height="200" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                                </div>
+                            </div>
                 </aside>
             </div>
         </div>

@@ -427,7 +427,7 @@
         function goToIndexContact(e) {
             e && e.preventDefault();
             const targetHash = '#contact';
-            const roots = ['/', '/index.html', '/index.htm'];
+            const roots = ['/', '../pages/contactus.html', '../pages/contactus.html'];
             const curr = location.pathname.replace(/\/$/, '') || '/';
 
             // if already on index (root), try to smooth scroll to the contact element
@@ -443,7 +443,7 @@
             }
 
             // otherwise navigate to index with hash so index can handle scrolling on load
-            location.href = '/index.html' + targetHash;
+            location.href = '../pages/contactus.html' + targetHash;
         }
 
         // small helpers: dynamic year and stat counters
