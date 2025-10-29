@@ -186,7 +186,7 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   .revivemainbk {
     height: 100%;
     padding: 170px 10px 20px;
@@ -226,6 +226,12 @@
 
   .reviewer-name {
     font-size: 18px;
+  }
+
+  .bottomservices {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
   }
 }
 

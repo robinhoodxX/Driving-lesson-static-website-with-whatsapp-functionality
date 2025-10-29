@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="components/assets/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="components/assets/favicon_io/favicon-16x16.png">
   <link rel='stylesheet' href='styles.css'>
-  <link href="components/pages/forum.html">
+  <link rel='import' href='components/pages/forum.html'>
   <script src='script.js'></script>
   <link rel='stylesheet' href='components/componentscss/header.css'>
   <link rel='stylesheet' href='components/componentscss/header2.css'>
@@ -37,24 +37,5 @@
       </script>
     </section>
   </div>
-
 </body>
-<script>
-  const dropBtn = document.querySelector(".dropbtn");
-  const dropdown = document.querySelector(".list");
-
-  // Toggle dropdown on button click
-  dropBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // prevent body click trigger
-    dropdown.classList.toggle("show");
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener("click", (e) => {
-    if (dropdown.classList.contains("show") && !dropdown.contains(e.target)) {
-      dropdown.classList.remove("show");
-    }
-  });
-</script>
-
 </html>
