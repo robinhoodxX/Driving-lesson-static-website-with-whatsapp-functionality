@@ -7,6 +7,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="/components/componentscss/header.css" />
   <link rel="stylesheet" href="/components/componentscss/header2.css" />
+  <script src="/components/scripts/dropdown.js" defer></script>
 </head>
 
 <body>
@@ -1228,23 +1229,7 @@
     </div>
   </section>
 </body>
-<script>
-  const dropBtn = document.querySelector(".dropbtn");
-  const dropdown = document.querySelector(".list");
-
-  // Toggle dropdown on button click
-  dropBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // prevent body click trigger
-    dropdown.classList.toggle("show");
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener("click", (e) => {
-    if (dropdown.classList.contains("show") && !dropdown.contains(e.target)) {
-      dropdown.classList.remove("show");
-    }
-  });
-</script>
+<script src="/script.js" defer></script>
 
 <script>
   // Add click effect to buttons
