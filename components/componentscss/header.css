@@ -53,7 +53,8 @@
   padding: 8px 14px;
   border-radius: 6px;
   cursor: pointer;
-  display: none; /* hidden by default on desktop */
+  display: none;
+  /* hidden by default on desktop */
 }
 
 .list {
@@ -93,30 +94,28 @@
 
 @media screen and (max-width: 550px) {
   .dropdown .list {
-  display: none;
-  position: absolute;
-  background: white;
-  list-style: none;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  overflow: hidden;
-  z-index: 1001;
-}
+    display: none;
+    border-radius: 8px;
+  }
 
-.dropdown .list.show {
-  display: block;
-}
+  .dropdown .list.show {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    right: 0;
+    width: 150px;
+  }
 
-.dropbtn {
-  background: #32CD32;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  display: block; /* show on mobile */
-}
-
+  .dropbtn {
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: auto;
+    display: block;
+    /* show on mobile */
+  }
 
   .item {
     text-align: center;
@@ -459,6 +458,32 @@
 .whatsapp-chat img {
   width: 50px;
   height: 50px;
+}
+
+/* Tooltip styling */
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  background-color: #25D366;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px 10px;
+  position: absolute;
+  bottom: 70px;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 14px;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Show tooltip on hover */
+.whatsapp-btn:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 .whatsapp-chat:hover {
@@ -893,15 +918,13 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(
-    45deg,
-    #ff0080,
-    #ff8c00,
-    #40e0d0,
-    #00ff87,
-    #4b0082,
-    #ff0080
-  );
+  background: linear-gradient(45deg,
+      #ff0080,
+      #ff8c00,
+      #40e0d0,
+      #00ff87,
+      #4b0082,
+      #ff0080);
   background-size: 300% 300%;
   border-radius: 24px;
   z-index: -1;
@@ -935,9 +958,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -959,10 +984,12 @@
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
@@ -1002,10 +1029,12 @@
 }
 
 @keyframes expandLine {
+
   0%,
   100% {
     width: 60px;
   }
+
   50% {
     width: 120px;
   }
@@ -1049,15 +1078,19 @@
 .feature-item:nth-child(1) .feature-icon {
   animation-delay: 0.1s;
 }
+
 .feature-item:nth-child(2) .feature-icon {
   animation-delay: 0.2s;
 }
+
 .feature-item:nth-child(3) .feature-icon {
   animation-delay: 0.3s;
 }
+
 .feature-item:nth-child(4) .feature-icon {
   animation-delay: 0.4s;
 }
+
 .feature-item:nth-child(5) .feature-icon {
   animation-delay: 0.5s;
 }
@@ -1067,6 +1100,7 @@
     transform: scale(0) rotate(-180deg);
     opacity: 0;
   }
+
   100% {
     transform: scale(1) rotate(0deg);
     opacity: 1;
@@ -1130,10 +1164,12 @@
 }
 
 @keyframes bounce {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-8px);
   }
@@ -1147,8 +1183,8 @@
 
 @media (max-width: 480px) {
   .packages-container {
-  flex-direction: column;
-}
+    flex-direction: column;
+  }
 }
 
 /*--------------- Intensive Driving Courses -------------*/
@@ -1301,7 +1337,8 @@
 .package-boxa.popular {
   transform: scale(1.05);
   position: relative;
-  min-height: 250px; /* or any height you want */
+  min-height: 250px;
+  /* or any height you want */
   overflow: hidden;
 }
 
@@ -1708,16 +1745,19 @@
     align-items: center;
     justify-content: center;
   }
+
   .instructor-vehicle-text {
     align-items: center;
     text-align: center;
     padding: 20px;
   }
+
   .instructor-vehicle-container img {
     width: 80%;
     margin: 20px 0 32px 0;
     border-radius: 35px;
   }
+
   .instructor-vehiclediv {
     flex-direction: column;
     padding: 20px;
@@ -1774,6 +1814,7 @@
 }
 
 @media screen and (max-width: 768px) {
+
   .learn-to-drive-div,
   .learn-to-drive-div2,
   .learn-to-drive-div3,
@@ -1782,6 +1823,7 @@
     align-items: center;
     justify-content: center;
   }
+
   .learn-to-drive-image,
   .learn-to-drive-image2,
   .learn-to-drive-image3,
@@ -1789,6 +1831,7 @@
     padding-left: 0;
     padding-right: 0;
   }
+
   .learn-to-drive-text,
   .learn-to-drive-text2,
   .learn-to-drive-text3,
@@ -1801,6 +1844,7 @@
 }
 
 @media screen and (max-width: 480px) {
+
   .learn-to-drive-div,
   .learn-to-drive-div2,
   .learn-to-drive-div3,
@@ -1809,6 +1853,7 @@
     align-items: center;
     justify-content: center;
   }
+
   .learn-to-drive-image,
   .learn-to-drive-image2,
   .learn-to-drive-image3,
@@ -1816,10 +1861,12 @@
     padding-left: 0;
     padding-right: 0;
   }
+
   .learn-to-drive-img {
     width: 250px;
     height: 250px;
   }
+
   .learn-to-drive-text,
   .learn-to-drive-text2,
   .learn-to-drive-text3,
