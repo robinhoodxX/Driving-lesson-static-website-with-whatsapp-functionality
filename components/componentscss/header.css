@@ -1211,9 +1211,9 @@
 }
 
 .intensiveheading h3 {
-  font-size: 36px;
-  font-weight: 700;
-  font-family: serif;
+  font-size: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: regular;
   color: #ffffff;
   margin-bottom: 15px;
   letter-spacing: -0.5px;
@@ -1227,6 +1227,13 @@
   margin-right: 20px;
 }
 
+@media screen and (max-width: 1024px) {
+  .intensiveheading h3 {
+    font-size: 22px;
+    padding: 30px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .intensiveheading {
     flex-direction: row;
@@ -1238,8 +1245,8 @@
   }
 
   .intensiveheading h3 {
-    font-size: 28px;
-    padding: 20px;
+    font-size: 20px;
+    padding: 13px;
   }
 }
 
@@ -1611,7 +1618,6 @@
 }
 
 .instructor-vehicle-text {
-  font-family: serif;
   color: #ffffff;
   letter-spacing: -0.5px;
   text-align: left;

@@ -424,7 +424,7 @@
                         <p class="muted" style="font-size:13px;margin-bottom:10px">Transparent hourly rates and packaged
                             lessons with bundled savings — contact us for a tailored quote.</p>
                         <button class="btn"
-                            onclick="(function(e){e&&e.preventDefault();const targetHash='#packages';const roots=['/','/index.html','/index.htm'];const curr=location.pathname.replace(/\/$/,'')||'/'; if(roots.includes(curr)||roots.includes(location.pathname)){const el=document.querySelector(targetHash)||document.getElementById('packages')||document.querySelector('.packages'); if(el){el.scrollIntoView({behavior:'smooth',block:'start'});return;} location.hash=targetHash; return;} location.href='/index.html'+targetHash; })(event)">View
+                            onclick="(function(e){e&&e.preventDefault();const targetHash='#packages';const roots=['/','../../index.html','../../index.htm'];const curr=location.pathname.replace(/\/$/,'')||'/'; if(roots.includes(curr)||roots.includes(location.pathname)){const el=document.querySelector(targetHash)||document.getElementById('packages')||document.querySelector('.packages'); if(el){el.scrollIntoView({behavior:'smooth',block:'start'});return;} location.hash=targetHash; return;} location.href='../../index.html'+targetHash; })(event)">View
                             packages</button>
                     </div>
 
