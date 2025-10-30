@@ -477,7 +477,7 @@
   font-size: 14px;
   white-space: nowrap;
   transition: opacity 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Show tooltip on hover */
@@ -535,11 +535,15 @@
 
 .carousel-track.reverse {
   display: flex;
-  animation: scroll-right 30s linear infinite;
+  animation: scroll-right 15s linear infinite;
   width: calc(200%);
   /* Ensure enough width for seamless loop */
   will-change: transform;
   /* Optimize for animations */
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* Internet Explorer and Edge */
 }
 
 .carousel:hover .carousel-track {
@@ -1211,7 +1215,7 @@
 }
 
 .intensiveheading h3 {
-  font-size: 25px;
+  font-size: 22px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: regular;
   color: #ffffff;
@@ -1229,7 +1233,7 @@
 
 @media screen and (max-width: 1024px) {
   .intensiveheading h3 {
-    font-size: 22px;
+    font-size: 17px;
     padding: 30px;
   }
 }
@@ -1245,7 +1249,7 @@
   }
 
   .intensiveheading h3 {
-    font-size: 20px;
+    font-size: 12px;
     padding: 13px;
   }
 }

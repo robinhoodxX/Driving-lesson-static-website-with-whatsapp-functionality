@@ -4,11 +4,12 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Driving School near me - Green Pass</title>
+  <title>Driving School near me - GreenPass GPS</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <meta name="description" content="Join GreenPass Driving Lessons and learn to drive safely and confidently with certified instructors in your city. Manual and automatic car lessons available.">
+  <meta name="description" content="Join GreenPass GPS Driving Lessons and learn to drive safely and confidently with certified instructors in your city. Manual and automatic car lessons available.">
   <meta name="keywords" content="driving lesson near me, driving school, driving test, learn driving, instructor, driving license, Birmingham driving school, driving classes, driving course, manual driving lessons, automatic driving lessons">
-  <meta name="author" content="GreenPass Driving School">
+  <meta name="author" content="GreenPass GPS">
+  <link rel="canonical" href="https://www.drivinglessonsgreen.co.uk/">
   <link rel="apple-touch-icon" sizes="180x180" href="components/assets/favicon_io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="components/assets/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="components/assets/favicon_io/favicon-16x16.png">
@@ -21,38 +22,9 @@
 
 <body>
   <div id="root">
-    <section id="header">
-      <script>
-        fetch('components/header.html')
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById('header').innerHTML = data;
-
-            // Now header is loaded, attach events
-            const dropdownBtn = document.querySelector('.dropbtn');
-            const dropdownList = document.querySelector('.list');
-
-            if (!dropdownBtn || !dropdownList) return;
-
-            // Toggle dropdown on button click
-            dropdownBtn.addEventListener('click', (e) => {
-              e.stopPropagation(); // prevent body click from firing
-              dropdownList.classList.toggle('show');
-            });
-
-            // Close dropdown when clicking outside
-            document.addEventListener('click', (e) => {
-              // If dropdown is open and the click is NOT inside dropdown or button
-              if (dropdownList.classList.contains('show') &&
-                !dropdownList.contains(e.target) &&
-                !dropdownBtn.contains(e.target)) {
-                dropdownList.classList.remove('show');
-              }
-            });
-          });
-
-      </script>
-    </section>
+    <section id="header"></section>
+    <script src="./components/scripts/headerdomndropdown.js" defer></script>
+    <script src="./components/scripts/visitorcounter.js" defer></script>
     <section id="header2">
       <script>
         fetch('components/header2.html')

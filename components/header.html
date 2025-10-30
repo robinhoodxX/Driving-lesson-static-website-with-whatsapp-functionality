@@ -2,13 +2,17 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title></title>
-  <link rel="stylesheet" href="/components/componentscss/header.css" />
-  <link rel="stylesheet" href="/components/componentscss/header2.css" />
-  <script src="/components/scripts/dropdown.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./components/componentscss/header.css">
+  <link rel="stylesheet" href="./components/componentscss/header2.css">
+  <link rel="icon" type="image/x-icon" href="./components/componentscss/favicon.ico">
+  <title>GreenPass GPS - Learn to Drive with Confidence</title>
+  <meta name="author" content="GreenPass GPS" />
+  <link rel="canonical" href="https://www.drivinglessonsgreen.co.uk/header.html">
 </head>
+<script src="./components/scripts/waveparticle.js" defer></script>
+
 
 <body>
   <!-- header background, icon -->
@@ -38,8 +42,7 @@
       <div class="headericonbg">
         <div class="headericontext">
           <h5 style="color: white;">
-            The driving school that builds safe and confident drivers for
-            life!
+            The Driving School prepares pupils to drive safely and confidently for the rest of their lives!
           </h5>
           <p>
             Pass faster, drive smarter. No more L plates let's make it happen.
@@ -86,7 +89,7 @@
         </icon>
       </div>
       <div class="chatwithusterms">
-        <a class="terms" href="components/pages/t&c/Terms&Conditions.html">
+        <a class="terms" href="./components/pages/tnc.html">
           <p>
             Please read term and condition before accepting booking lessons
           </p>
@@ -101,147 +104,6 @@
         </a>
       </div>
     </div>
-  </section>
-  <!-- chat with us whatsapp -->
-  <section id="visitor-counter" style="display: flex; justify-content: center; margin: 18px 0">
-    <div>
-      <div style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 120px;
-          ">
-        <div style="font-size: 13px; font-weight: 700; opacity: 0.9">
-          Website visitors
-        </div>
-        <div id="visitor-count" style="
-              font-size: 28px;
-              font-weight: 900;
-              letter-spacing: 0.6px;
-              margin-top: 6px;
-            ">
-          …
-        </div>
-      </div>
-    </div>
-
-    <script>
-      (function () {
-        // CounterAPI settings (from you)
-        const API_BASE = "https://app.counterapi.dev";
-        const TOKEN_RESOURCE_PATH = "/team/marketting/user-tokens/822";
-        const TOKEN = "ut_X7o7fmdTmQZpbNIQfOBzVY377bhTqzLmqS44k341";
-        const COUNTER_NAME = "visitors";
-
-        const displayEl = document.getElementById("visitor-count");
-
-        // simple local fallback helpers
-        function lsGet(k, fallback = 0) {
-          try {
-            const v = localStorage.getItem(k);
-            return v === null ? fallback : Number(v);
-          } catch (e) {
-            return fallback;
-          }
-        }
-        function lsSet(k, v) {
-          try {
-            localStorage.setItem(k, String(v));
-          } catch (e) { }
-        }
-
-        // read counter value
-        async function fetchCounter() {
-          const url = `${API_BASE}${TOKEN_RESOURCE_PATH}/counters/${encodeURIComponent(
-            COUNTER_NAME
-          )}?token=${encodeURIComponent(TOKEN)}`;
-          const res = await fetch(url, { method: "GET" });
-          if (!res.ok) throw new Error("fetch failed");
-          const json = await res.json();
-          // CounterAPI may return value/count
-          if (typeof json.value !== "undefined") return Number(json.value);
-          if (typeof json.count !== "undefined") return Number(json.count);
-          if (typeof json === "number") return json;
-          throw new Error("unexpected response");
-        }
-
-        // increment counter (hit)
-        async function hitCounter() {
-          const url = `${API_BASE}${TOKEN_RESOURCE_PATH}/counters/${encodeURIComponent(
-            COUNTER_NAME
-          )}/hit?token=${encodeURIComponent(TOKEN)}`;
-          const res = await fetch(url, { method: "POST" });
-          if (!res.ok) throw new Error("hit failed");
-          const json = await res.json();
-          if (typeof json.value !== "undefined") return Number(json.value);
-          if (typeof json.count !== "undefined") return Number(json.count);
-          return null;
-        }
-
-        // animate number from -> to
-        function animateNumber(from, to, el) {
-          const dur = 700;
-          const start = performance.now();
-          const diff = to - from;
-          requestAnimationFrame(function frame(ts) {
-            const t = Math.min(1, (ts - start) / dur);
-            const cur = Math.floor(from + diff * (1 - Math.pow(1 - t, 2)));
-            el.textContent = cur.toLocaleString();
-            if (t < 1) requestAnimationFrame(frame);
-          });
-        }
-
-        (async function init() {
-          // show placeholder
-          displayEl.textContent = "…";
-
-          // increment once per browser session
-          const sessionKey = "visited_counted";
-          let incremented = !!sessionStorage.getItem(sessionKey);
-
-          // Try to hit remote counter if not yet counted this session
-          if (!incremented) {
-            try {
-              const hitVal = await hitCounter();
-              if (hitVal != null && !Number.isNaN(hitVal)) {
-                lsSet("counter:" + COUNTER_NAME, hitVal);
-                animateNumber(
-                  Math.max(0, lsGet("counter:" + COUNTER_NAME, 0)),
-                  hitVal,
-                  displayEl
-                );
-                sessionStorage.setItem(sessionKey, "1");
-              }
-              incremented = true;
-            } catch (e) {
-              // remote hit failed - fallback to local increment
-              const local = lsGet("counter:" + COUNTER_NAME, 0) + 1;
-              lsSet("counter:" + COUNTER_NAME, local);
-              animateNumber(Math.max(0, local - 1), local, displayEl);
-              sessionStorage.setItem(sessionKey, "1");
-              incremented = true;
-            }
-          }
-
-          // fetch authoritative value to display (best-effort)
-          try {
-            const val = await fetchCounter();
-            if (!Number.isNaN(val)) {
-              const prev = lsGet("counter:" + COUNTER_NAME, 0);
-              lsSet("counter:" + COUNTER_NAME, val);
-              animateNumber(prev, val, displayEl);
-              return;
-            }
-          } catch (e) {
-            // ignore - will use local fallback
-          }
-
-          // final fallback: show local stored value
-          const fallback = lsGet("counter:" + COUNTER_NAME, 0);
-          displayEl.textContent = String(fallback.toLocaleString());
-        })();
-      })();
-    </script>
   </section>
   <!-- card scrolling -->
   <section>
@@ -1231,183 +1093,6 @@
       </div>
     </div>
   </section>
+  <script src="./components/scripts/clickeffect.js" defer></script>
 </body>
-<script src="/script.js" defer></script>
-
-<script>
-  // Add click effect to buttons
-  document.querySelectorAll(".select-button").forEach((button) => {
-    button.addEventListener("click", function (e) {
-      const rect = this.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const ripple = document.createElement("span");
-      ripple.style.cssText = `
-                    position: absolute;
-                    width: 20px;
-                    height: 20px;
-                    background: rgba(255, 255, 255, 0.6);
-                    border-radius: 50%;
-                    left: ${x}px;
-                    top: ${y}px;
-                    transform: translate(-50%, -50%);
-                    animation: ripple 0.6s ease-out;
-                    pointer-events: none;
-                `;
-
-      this.appendChild(ripple);
-
-      setTimeout(() => ripple.remove(), 600);
-    });
-  });
-
-  // Add keyframe for ripple
-  const style = document.createElement("style");
-  style.textContent = `
-            @keyframes ripple {
-                to {
-                    width: 200px;
-                    height: 200px;
-                    opacity: 0;
-                }
-            }
-        `;
-  document.head.appendChild(style);
-</script>
-<script>
-  // Wave particle animation for popular package
-  const canvas = document.getElementById("waveCanvas");
-  const ctx = canvas.getContext("2d");
-
-  function resizeCanvas() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-
-  resizeCanvas();
-  window.addEventListener("resize", resizeCanvas);
-
-  const particles = [];
-  const particleCount = 80;
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 3 + 1;
-      this.speedX = Math.random() * 2 - 1;
-      this.speedY = Math.random() * 2 - 1;
-      this.color = this.randomColor();
-    }
-
-    randomColor() {
-      const colors = [
-        "rgba(99, 102, 241, 0.6)",
-        "rgba(139, 92, 246, 0.6)",
-        "rgba(236, 72, 153, 0.6)",
-        "rgba(245, 158, 11, 0.6)",
-        "rgba(16, 185, 129, 0.6)",
-      ];
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
-
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-
-      if (this.x > canvas.width) this.x = 0;
-      if (this.x < 0) this.x = canvas.width;
-      if (this.y > canvas.height) this.y = 0;
-      if (this.y < 0) this.y = canvas.height;
-    }
-
-    draw() {
-      ctx.fillStyle = this.color;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  function init() {
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-  }
-
-  function connectParticles() {
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < 100) {
-          ctx.strokeStyle = `rgba(139, 92, 246, ${0.2 * (1 - distance / 100)
-            })`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach((particle) => {
-      particle.update();
-      particle.draw();
-    });
-
-    connectParticles();
-    requestAnimationFrame(animate);
-  }
-
-  init();
-  animate();
-
-  // Button ripple effect
-  document.querySelectorAll(".select-btn").forEach((button) => {
-    button.addEventListener("click", function (e) {
-      const rect = this.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const ripple = document.createElement("span");
-      ripple.style.cssText = `
-                    position: absolute;
-                    width: 10px;
-                    height: 10px;
-                    background: rgba(255, 255, 255, 0.6);
-                    border-radius: 50%;
-                    left: ${x}px;
-                    top: ${y}px;
-                    transform: translate(-50%, -50%);
-                    animation: rippleEffect 0.6s ease-out;
-                    pointer-events: none;
-                `;
-
-      this.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 600);
-    });
-  });
-
-  const style = document.createElement("style");
-  style.textContent = `
-            @keyframes rippleEffect {
-                to {
-                    width: 200px;
-                    height: 200px;
-                    opacity: 0;
-                }
-            }
-        `;
-  document.head.appendChild(style);
-</script>
-
 </html>
