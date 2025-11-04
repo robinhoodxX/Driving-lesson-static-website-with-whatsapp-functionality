@@ -9,10 +9,14 @@
   justify-content: center;
   align-items: center;
   max-width: 100%;
-  height: 10%;
+  height: auto;
   margin: 0 auto;
-  padding: 20px;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.7), rgba(27, 255, 160, 0.3));
+  padding: 30px;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.7),
+    rgba(27, 255, 160, 0.3)
+  );
   backdrop-filter: blur(20px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: fixed;
@@ -36,13 +40,22 @@
 
 .titlea:hover {
   cursor: pointer;
-  color: black;
   background-color: #ddd;
 }
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdown1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
 }
 
 .dropbtn {
@@ -57,6 +70,25 @@
   /* hidden by default on desktop */
 }
 
+.dropbtn1 {
+  background: none;
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-shadow: #000000 1px 1px 2px;
+}
+
+.dropbtn1:hover {
+  cursor: pointer;
+  background-color: #ddd;
+  border-radius: unset;
+}
+
 .list {
   display: flex;
   font-family: Arial, sans-serif;
@@ -65,10 +97,29 @@
   padding: 0;
 }
 
+.list1 {
+  display: none;
+  background-color: rgb(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border: #ffffff 1px solid;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  list-style-type: none;
+  padding: 20px;
+  margin-right: 20px;
+}
+
 .list .nav-link {
   text-decoration: none;
   color: #ffffff;
   text-shadow: #000000 1px 1px 2px;
+}
+
+.list1 .nav-link1 {
+  text-decoration: none;
+  color: #ffffff;
+  text-shadow: #000000 1px 1px 2px;
+  font-size: 12px;
 }
 
 .item {
@@ -81,7 +132,17 @@
   background-color: #ddd;
 }
 
-@media screen and (max-width: 768px) {
+.dropdown1 .list1.show {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  right: 0;
+  background-color: unset;
+  backdrop-filter: unset;
+  border: none;
+}
+
+@media screen and (max-width: 806px) {
   .container {
     display: flex;
     flex-direction: row;
@@ -90,10 +151,12 @@
     font-size: 14px;
   }
 
-}
-
-@media screen and (max-width: 550px) {
   .dropdown .list {
+    display: none;
+    border-radius: 8px;
+  }
+
+  .dropdown1 .list1 {
     display: none;
     border-radius: 8px;
   }
@@ -104,6 +167,20 @@
     align-items: flex-end;
     right: 0;
     width: 150px;
+  }
+
+  .dropdown1 .list1.show {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    right: 0;
+    width: 150px;
+    background-color: unset;
+    backdrop-filter: unset;
+    border: none;
+    margin-top: auto;
+    padding: unset;
+    margin: unset;
   }
 
   .dropbtn {
@@ -117,6 +194,15 @@
     /* show on mobile */
   }
 
+  .dropbtn1 {
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px;
+  }
+
   .item {
     text-align: center;
     padding: 12px;
@@ -126,6 +212,17 @@
     color: white;
     text-decoration: none;
     display: block;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container {
+    padding: 15px;
+  }
+
+  .dropbtn1 {
+    font-size: 14px;
+    padding: 10px 10px;
   }
 }
 
@@ -465,7 +562,7 @@
   visibility: hidden;
   opacity: 0;
   width: max-content;
-  background-color: #25D366;
+  background-color: #25d366;
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -882,7 +979,6 @@
 }
 
 @media screen and (max-width: 320px) {
-
   .reviews-title {
     font-size: 24px;
   }
@@ -922,13 +1018,15 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg,
-      #ff0080,
-      #ff8c00,
-      #40e0d0,
-      #00ff87,
-      #4b0082,
-      #ff0080);
+  background: linear-gradient(
+    45deg,
+    #ff0080,
+    #ff8c00,
+    #40e0d0,
+    #00ff87,
+    #4b0082,
+    #ff0080
+  );
   background-size: 300% 300%;
   border-radius: 24px;
   z-index: -1;
@@ -988,7 +1086,6 @@
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     transform: scale(1);
@@ -1033,7 +1130,6 @@
 }
 
 @keyframes expandLine {
-
   0%,
   100% {
     width: 60px;
@@ -1168,7 +1264,6 @@
 }
 
 @keyframes bounce {
-
   0%,
   100% {
     transform: translateY(0);
@@ -1292,19 +1387,21 @@
 }
 
 .package-boxa::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -3px;
   left: -3px;
   right: -3px;
   bottom: -3px;
-  background: linear-gradient(45deg,
-      #ff0080,
-      #ff8c00,
-      #40e0d0,
-      #00ff87,
-      #4b0082,
-      #ff0080);
+  background: linear-gradient(
+    45deg,
+    #ff0080,
+    #ff8c00,
+    #40e0d0,
+    #00ff87,
+    #4b0082,
+    #ff0080
+  );
   background-size: 400% 400%;
   border-radius: 20px;
   z-index: -2;
@@ -1312,7 +1409,7 @@
 }
 
 .package-boxa::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1325,7 +1422,6 @@
 }
 
 @keyframes gradientFlow {
-
   0%,
   100% {
     background-position: 0% 50%;
@@ -1413,7 +1509,6 @@
 }
 
 @keyframes glow {
-
   0%,
   100% {
     box-shadow: 0 3px 10px rgba(245, 158, 11, 0.4);
@@ -1446,7 +1541,7 @@
 }
 
 .package-headera::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -1458,7 +1553,6 @@
 }
 
 @keyframes slideWidth {
-
   0%,
   100% {
     width: 40px;
@@ -1551,7 +1645,7 @@
 }
 
 .select-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1824,7 +1918,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
   .learn-to-drive-div,
   .learn-to-drive-div2,
   .learn-to-drive-div3,
@@ -1854,7 +1947,6 @@
 }
 
 @media screen and (max-width: 480px) {
-
   .learn-to-drive-div,
   .learn-to-drive-div2,
   .learn-to-drive-div3,

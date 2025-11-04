@@ -4,24 +4,36 @@ fetch('components/header.html')
     document.getElementById('header').innerHTML = data;
 
     // Now header is loaded, attach events
-    const dropdownBtn = document.querySelector('.dropbtn');
-    const dropdownList = document.querySelector('.list');
+    const dropdownBtn = document.querySelector('.dropbtn1');
+    const dropdownBtn1 = document.querySelector('.dropbtn');
+    const dropdownList = document.querySelector('.list1');
+    const dropdownList1 = document.querySelector('.list');
 
-    if (!dropdownBtn || !dropdownList) return;
+    // If neither dropdown pair exists, nothing to do
+    if ((!dropdownBtn || !dropdownList) && (!dropdownBtn1 || !dropdownList1)) return;
 
-    // Toggle dropdown on button click
-    dropdownBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // prevent body click from firing
-      dropdownList.classList.toggle('show');
-    });
+    // Helper to attach dropdown behavior to a button/list pair
+    const attachDropdown = (btn, list) => {
+      if (!btn || !list) return;
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent body click from firing
+        list.classList.toggle('show');
+      });
+    };
 
-    // Close dropdown when clicking outside
+    attachDropdown(dropdownBtn, dropdownList);
+    attachDropdown(dropdownBtn1, dropdownList1);
+
+    // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => {
-      // If dropdown is open and the click is NOT inside dropdown or button
-      if (dropdownList.classList.contains('show') &&
-        !dropdownList.contains(e.target) &&
-        !dropdownBtn.contains(e.target)) {
-        dropdownList.classList.remove('show');
-      }
+      [ {btn: dropdownBtn, list: dropdownList}, {btn: dropdownBtn1, list: dropdownList1} ].forEach(pair => {
+        const {btn, list} = pair;
+        if (!btn || !list) return;
+        if (list.classList.contains('show') &&
+          !list.contains(e.target) &&
+          !btn.contains(e.target)) {
+          list.classList.remove('show');
+        }
+      });
     });
   });
