@@ -1,0 +1,11 @@
+# Allow all web crawlers full access
+User-agent: *
+Allow: /
+
+# Block internal or unnecessary directories (optional)
+Disallow: /components/assets/
+Disallow: /components/componentscss/
+Disallow: /components/pages/forums/
+
+# Sitemap location
+Sitemap: https://www.drivinglessonsgreen.co.uk/sitemap.xml

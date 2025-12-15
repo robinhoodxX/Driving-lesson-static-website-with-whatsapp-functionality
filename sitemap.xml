@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.drivinglessonsgreen.co.uk/</loc>
+    <lastmod>2025-10-29</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.drivinglessonsgreen.co.uk/components/pages/aboutus.html</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.drivinglessonsgreen.co.uk/components/pages/tnc.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.drivinglessonsgreen.co.uk/components/pages/contactus.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.drivinglessonsgreen.co.uk/components/pages/services.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.drivinglessonsgreen.co.uk/components/pages/adi-pdi.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.drivinglessonsgreen.co.uk/components/pages/becomeadrivinginstructor.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.drivinglessonsgreen.co.uk/components/pages/gallery.html</loc>
+    <priority>0.64</priority>
+  </url>
+</urlset>
