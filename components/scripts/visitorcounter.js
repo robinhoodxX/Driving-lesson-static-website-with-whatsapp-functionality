@@ -1,20 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Wait until header is loaded by dom.js
-  const checkHeader = setInterval(() => {
+export function initVisitorCounter() {
+  // Wait until header fragment is injected, then run once
+  const maxChecks = 30;
+  let attempts = 0;
+  const check = setInterval(() => {
     const displayEl = document.getElementById("visitor-count");
     if (displayEl) {
-      clearInterval(checkHeader);
-      initVisitorCounter(displayEl);
+      clearInterval(check);
+      runCounter(displayEl);
+    } else if (++attempts >= maxChecks) {
+      clearInterval(check);
     }
-  }, 300);
-});
+  }, 200);
+}
 
-function initVisitorCounter(displayEl) {
+function runCounter(displayEl) {
   const API_BASE = "https://app.counterapi.dev";
-  const TOKEN_RESOURCE_PATH = "/team/marketting/";
+  const TOKEN_RESOURCE_PATH = "/team/marketting"; // no trailing slash for consistency
   const TOKEN = "ut_OYu2PXYqBEoUeo0atatVPMTF11cI14OVCDVhmR6g";
   const COUNTER_NAME = "website-visitor-counting";
-
 
   function lsGet(k, fallback = 0) {
     try { return Number(localStorage.getItem(k)) || fallback; } catch { return fallback; }

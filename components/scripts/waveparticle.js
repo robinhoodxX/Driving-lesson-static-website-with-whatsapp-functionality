@@ -1,5 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
+export function initWaveParticle() {
   const canvas = document.getElementById("waveCanvas");
+  if (!canvas) return;
+
   const ctx = canvas.getContext("2d");
 
   function resizeCanvas() {
@@ -94,6 +96,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Button ripple effect
   document.querySelectorAll(".select-btn").forEach((button) => {
+    if (button.dataset.rippleBound === '1') return;
+    button.dataset.rippleBound = '1';
+    const pos = window.getComputedStyle(button).position;
+    if (pos === 'static' || !pos) {
+      button.style.position = 'relative';
+      button.style.overflow = 'hidden';
+    }
     button.addEventListener("click", function (e) {
       const rect = this.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -118,15 +127,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const style = document.createElement("style");
-  style.textContent = `
-    @keyframes rippleEffect {
-      to {
-        width: 200px;
-        height: 200px;
-        opacity: 0;
+  // inject ripple keyframes once
+  if (!document.getElementById('rippleEffect-keys')) {
+    const style = document.createElement("style");
+    style.id = 'rippleEffect-keys';
+    style.textContent = `
+      @keyframes rippleEffect {
+        to {
+          width: 200px;
+          height: 200px;
+          opacity: 0;
+        }
       }
-    }
-  `;
-  document.head.appendChild(style);
-});
+    `;
+    document.head.appendChild(style);
+  }
+}

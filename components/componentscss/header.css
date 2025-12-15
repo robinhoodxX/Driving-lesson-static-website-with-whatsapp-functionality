@@ -12,11 +12,9 @@
   height: auto;
   margin: 0 auto;
   padding: 30px;
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0.7),
-    rgba(27, 255, 160, 0.3)
-  );
+  background: linear-gradient(to left,
+      rgba(255, 255, 255, 0.7),
+      rgba(27, 255, 160, 0.3));
   backdrop-filter: blur(20px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: fixed;
@@ -140,6 +138,7 @@
   background-color: unset;
   backdrop-filter: unset;
   border: none;
+  transition: all 0.3s ease;
 }
 
 @media screen and (max-width: 806px) {
@@ -152,26 +151,44 @@
   }
 
   .dropdown .list {
-    display: none;
+    display: flex;
+    flex-direction: column;
     border-radius: 8px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: max-height 0.25s ease, opacity 0.2s ease, transform 0.2s ease;
   }
 
   .dropdown1 .list1 {
     display: none;
+    flex-direction: column;
     border-radius: 8px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: max-height 0.25s ease, opacity 0.2s ease, transform 0.2s ease;
   }
 
   .dropdown .list.show {
-    display: flex;
-    flex-direction: column;
+    max-height: 320px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
     align-items: flex-end;
     right: 0;
     width: 150px;
   }
 
   .dropdown1 .list1.show {
-    display: flex;
-    flex-direction: column;
+    max-height: 320px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
     align-items: flex-end;
     right: 0;
     width: 150px;
@@ -181,6 +198,7 @@
     margin-top: auto;
     padding: unset;
     margin: unset;
+    transition: transform 0.3s ease;
   }
 
   .dropbtn {
@@ -1018,15 +1036,13 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(
-    45deg,
-    #ff0080,
-    #ff8c00,
-    #40e0d0,
-    #00ff87,
-    #4b0082,
-    #ff0080
-  );
+  background: linear-gradient(45deg,
+      #ff0080,
+      #ff8c00,
+      #40e0d0,
+      #00ff87,
+      #4b0082,
+      #ff0080);
   background-size: 300% 300%;
   border-radius: 24px;
   z-index: -1;
@@ -1086,6 +1102,7 @@
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: scale(1);
@@ -1130,6 +1147,7 @@
 }
 
 @keyframes expandLine {
+
   0%,
   100% {
     width: 60px;
@@ -1264,6 +1282,7 @@
 }
 
 @keyframes bounce {
+
   0%,
   100% {
     transform: translateY(0);
@@ -1393,15 +1412,13 @@
   left: -3px;
   right: -3px;
   bottom: -3px;
-  background: linear-gradient(
-    45deg,
-    #ff0080,
-    #ff8c00,
-    #40e0d0,
-    #00ff87,
-    #4b0082,
-    #ff0080
-  );
+  background: linear-gradient(45deg,
+      #ff0080,
+      #ff8c00,
+      #40e0d0,
+      #00ff87,
+      #4b0082,
+      #ff0080);
   background-size: 400% 400%;
   border-radius: 20px;
   z-index: -2;
@@ -1422,6 +1439,7 @@
 }
 
 @keyframes gradientFlow {
+
   0%,
   100% {
     background-position: 0% 50%;
@@ -1464,7 +1482,6 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.6;
 }
 
 .package-contenta {
@@ -1509,6 +1526,7 @@
 }
 
 @keyframes glow {
+
   0%,
   100% {
     box-shadow: 0 3px 10px rgba(245, 158, 11, 0.4);
@@ -1553,6 +1571,7 @@
 }
 
 @keyframes slideWidth {
+
   0%,
   100% {
     width: 40px;
@@ -1918,6 +1937,7 @@
 }
 
 @media screen and (max-width: 768px) {
+
   .learn-to-drive-div,
   .learn-to-drive-div2,
   .learn-to-drive-div3,
@@ -1947,6 +1967,7 @@
 }
 
 @media screen and (max-width: 480px) {
+
   .learn-to-drive-div,
   .learn-to-drive-div2,
   .learn-to-drive-div3,

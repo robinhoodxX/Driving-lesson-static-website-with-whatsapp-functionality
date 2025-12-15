@@ -15,7 +15,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="components/assets/favicon_io/favicon-16x16.png">
   <link rel='stylesheet' href='styles.css'>
   <link rel='import' href='components/pages/forum.html'>
-  <script src='script.js'></script>
   <link rel='stylesheet' href='components/componentscss/header.css'>
   <link rel='stylesheet' href='components/componentscss/header2.css'>
 </head>
@@ -23,18 +22,8 @@
 <body>
   <div id="root">
     <section id="header"></section>
-    <script src="./components/scripts/headerdomndropdown.js" defer></script>
-    <script src="./components/scripts/visitorcounter.js" defer></script>
-    <section id="header2">
-      <script>
-        fetch('components/header2.html')
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById('header2').innerHTML = data;
-          });
-      </script>
-    </section>
+    <section id="header2"></section>
   </div>
+  <script type="module" src="script.js"></script>
 </body>
-
 </html>

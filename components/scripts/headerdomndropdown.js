@@ -1,39 +1,50 @@
-fetch('components/header.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('header').innerHTML = data;
+function initDropdowns() {
+  const dropdownPairs = [
+    {
+      btn: document.querySelector('.dropbtn1'),
+      list: document.querySelector('.list1')
+    },
+    {
+      btn: document.querySelector('.dropbtn'),
+      list: document.querySelector('.list')
+    }
+  ];
 
-    // Now header is loaded, attach events
-    const dropdownBtn = document.querySelector('.dropbtn1');
-    const dropdownBtn1 = document.querySelector('.dropbtn');
-    const dropdownList = document.querySelector('.list1');
-    const dropdownList1 = document.querySelector('.list');
+  dropdownPairs.forEach(({ btn, list }) => {
+    if (!btn || !list) return;
 
-    // If neither dropdown pair exists, nothing to do
-    if ((!dropdownBtn || !dropdownList) && (!dropdownBtn1 || !dropdownList1)) return;
-
-    // Helper to attach dropdown behavior to a button/list pair
-    const attachDropdown = (btn, list) => {
-      if (!btn || !list) return;
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation(); // prevent body click from firing
-        list.classList.toggle('show');
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      // close all other dropdowns before toggling this one
+      dropdownPairs.forEach(({ list: otherList }) => {
+        if (otherList && otherList !== list) otherList.classList.remove('show');
       });
-    };
-
-    attachDropdown(dropdownBtn, dropdownList);
-    attachDropdown(dropdownBtn1, dropdownList1);
-
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', (e) => {
-      [ {btn: dropdownBtn, list: dropdownList}, {btn: dropdownBtn1, list: dropdownList1} ].forEach(pair => {
-        const {btn, list} = pair;
-        if (!btn || !list) return;
-        if (list.classList.contains('show') &&
-          !list.contains(e.target) &&
-          !btn.contains(e.target)) {
-          list.classList.remove('show');
-        }
-      });
+      const willShow = !list.classList.contains('show');
+      list.classList.toggle('show');
+      btn.setAttribute('aria-expanded', willShow ? 'true' : 'false');
     });
   });
+
+  document.addEventListener('click', e => {
+    dropdownPairs.forEach(({ btn, list }) => {
+      if (!btn || !list) return;
+      if (
+        list.classList.contains('show') &&
+        !list.contains(e.target) &&
+        !btn.contains(e.target)
+      ) {
+        list.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+}
+
+export function initHeader() {
+  initDropdowns();
+}
+
+export function initHeader2() {
+  // keep empty for now
+  // later: animations, buttons, counters, etc.
+}
