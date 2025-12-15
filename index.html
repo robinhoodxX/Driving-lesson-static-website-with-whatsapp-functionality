@@ -1207,6 +1207,29 @@
         <li><a href="#top">Scroll to top</a></li>
     </section>
   </div>
-  <script type="module" src="script.js"></script>
+  <script type="module">
+    import { initHeader, initHeader2 } from "./components/scripts/headerdomndropdown.js";
+    import { initClickEffect } from "./components/scripts/clickeffect.js";
+    import { initVisitorCounter } from "./components/scripts/visitorcounter.js";
+    import { initWaveParticle } from "./components/scripts/waveparticle.js";
+    import { initAnimations } from "./components/scripts/animation.js";
+
+    // ---- Cache busting (safe) ----
+    const VERSION = "2.5";
+    if (localStorage.getItem("site_version") !== VERSION) {
+      localStorage.setItem("site_version", VERSION);
+      location.reload(true);
+    }
+
+    // ---- Initialize components ----
+    initHeader();        // dropdowns etc.
+    initHeader2();       // empty for now (safe)
+
+    // ---- Effects & animations ----
+    initAnimations();
+    initClickEffect();
+    initVisitorCounter();
+    initWaveParticle();
+  </script>
 </body>
 </html>
