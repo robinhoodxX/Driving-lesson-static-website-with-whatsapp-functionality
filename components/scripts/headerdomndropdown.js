@@ -45,6 +45,5 @@ export function initHeader() {
 }
 
 export function initHeader2() {
-  // keep empty for now
-  // later: animations, buttons, counters, etc.
+  // placeholder for future header2 initialization
 }

@@ -4,35 +4,23 @@ import { initVisitorCounter } from "./components/scripts/visitorcounter.js";
 import { initWaveParticle } from "./components/scripts/waveparticle.js";
 import { initAnimations } from "./components/scripts/animation.js";
 
-// Load header 1
-fetch("./components/header.html")
-  .then(res => {
-    if (!res.ok) throw new Error(`header.html load failed: ${res.status}`);
-    return res.text();
-  })
-  .then(html => {
-    document.getElementById("header").innerHTML = html;
-    initHeader();
-    initWaveParticle();
-  })
-  .catch(err => console.error("Header1 load failed:", err));
+// Version control for cache / reload
+const version = '2.5';  // update version when making changes
+const storedVersion = localStorage.getItem('site_version');
 
-// Load header 2
-fetch("./components/header2.html")
-  .then(res => {
-    if (!res.ok) throw new Error(`header2.html load failed: ${res.status}`);
-    return res.text();
-  })
-  .then(html => {
-    document.getElementById("header2").innerHTML = html;
-    initHeader2();
+if (storedVersion !== version) {
+  localStorage.setItem('site_version', version);
+  window.location.reload(true);  // force reload to get new files
+}
 
-    // If animations depend on header2, initialize here
-    initAnimations();
-  })
-  .catch(err => console.error("Header2 load failed:", err));
+// Initialize headers directly since HTML is already in index.html
+initHeader();
+initHeader2();
 
-// Global effects that do NOT depend on header HTML can run immediately
+// Run animations after DOM is ready
 initAnimations();
+
+// Global effects
 initClickEffect();
 initVisitorCounter();
+initWaveParticle();
