@@ -8,4 +8,4 @@ Disallow: /components/componentscss/
 Disallow: /components/pages/forums/
 
 # Sitemap location
-Sitemap: https://www.drivinglessonsgreen.co.uk/sitemap.xml
+Sitemap: https://drivinglessonsgreen.co.uk/sitemap.xml
