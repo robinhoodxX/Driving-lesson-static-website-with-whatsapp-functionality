@@ -5,23 +5,35 @@
 .container {
   display: flex;
   color: #000000;
-  border-bottom: 1px solid #6bffa6;
+  /*border-bottom: 1px solid #6bffa6;*/
   justify-content: center;
   align-items: center;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
   padding: 30px;
-  background: linear-gradient(to left,
-      rgba(255, 255, 255, 0.7),
-      rgba(27, 255, 160, 0.3));
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0);
+  /*backdrop-filter: blur(20px);*/
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   border-radius: 0;
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease;
+}
+
+.container.scrolled {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 8px rgba(105, 105, 105, 0.2);
+  transition: all 0.7s ease;
+}
+
+.nav-container-dropdownbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .title {
@@ -34,11 +46,13 @@
   color: #6bffa6;
   padding: 10px;
   text-shadow: #000000 1px 1px 2px;
+  transition: all 0.3s ease;
 }
 
 .titlea:hover {
   cursor: pointer;
   background-color: #ddd;
+  transition: all 0.3s ease;
 }
 
 .dropdown {
@@ -53,7 +67,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: auto;
 }
 
 .dropbtn {
@@ -65,6 +78,7 @@
   border-radius: 6px;
   cursor: pointer;
   display: none;
+  text-shadow: #000000 1px 1px 2px;
   /* hidden by default on desktop */
 }
 
@@ -83,7 +97,6 @@
 
 .dropbtn1:hover {
   cursor: pointer;
-  background-color: #ddd;
   border-radius: unset;
 }
 
@@ -97,14 +110,15 @@
 
 .list1 {
   display: none;
-  background-color: rgb(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   border: #ffffff 1px solid;
   font-family: Arial, sans-serif;
   font-weight: bold;
   list-style-type: none;
   padding: 20px;
-  margin-right: 20px;
+  position: absolute;
+  background-color: #ddd;
+  margin-top: 50px;
 }
 
 .list .nav-link {
@@ -118,6 +132,7 @@
   color: #ffffff;
   text-shadow: #000000 1px 1px 2px;
   font-size: 12px;
+  white-space: nowrap;
 }
 
 .item {
@@ -130,12 +145,73 @@
   background-color: #ddd;
 }
 
+.dropdowndualbtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.submenu-parent {
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.submenu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-shadow: #000000 1px 1px 2px;
+}
+
+.submenu-list {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  list-style-type: none;
+  padding: 10px 0 0 14px;
+  margin: 8px 0 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+  width: 100%;
+}
+
+.submnc {
+  text-decoration: none;
+  color: #ffffff;
+  text-shadow: #000000 1px 1px 2px;
+  font-size: 15px;
+  list-style: none;
+}
+
+.submenu-list.show {
+  display: flex;
+  align-items: flex-end;
+}
+
+.submenu-list .item {
+  padding: 6px 0;
+}
+
+.submenu-list .nav-link {
+  display: block;
+  width: 100%;
+}
+
 .dropdown1 .list1.show {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   right: 0;
-  background-color: unset;
   backdrop-filter: unset;
   border: none;
   transition: all 0.3s ease;
@@ -158,6 +234,9 @@
     opacity: 0;
     overflow: hidden;
     pointer-events: none;
+    position: absolute;
+    background-color: #ddd;
+    margin-top: 50px;
     transform: translateY(-6px);
     transition: max-height 0.25s ease, opacity 0.2s ease, transform 0.2s ease;
   }
@@ -175,13 +254,14 @@
   }
 
   .dropdown .list.show {
-    max-height: 320px;
+    max-height: 75vh;
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
     align-items: flex-end;
     right: 0;
-    width: 150px;
+    width: 220px;
+    overflow-y: auto;
   }
 
   .dropdown1 .list1.show {
@@ -192,12 +272,9 @@
     align-items: flex-end;
     right: 0;
     width: 150px;
-    background-color: unset;
     backdrop-filter: unset;
     border: none;
-    margin-top: auto;
     padding: unset;
-    margin: unset;
     transition: transform 0.3s ease;
   }
 
@@ -224,6 +301,19 @@
   .item {
     text-align: center;
     padding: 12px;
+  }
+
+  .submenu-toggle {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .submenu-list {
+    width: 100%;
+    padding: 10px 0 0 12px;
+    margin-top: 10px;
+    border-left-color: rgba(255, 255, 255, 0.2);
   }
 
   .item a {
@@ -431,13 +521,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.489);
-  backdrop-filter: blur(5px);
-  height: 10%;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  z-index: 3;
 }
 
 .terms p {
@@ -447,10 +530,16 @@
 .chatwithusterms {
   color: rgb(49, 49, 49);
   text-align: center;
-  font-size: 15px;
+  font-size: 25px;
   background-size: cover;
   padding: 10px;
-  border-radius: 10px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.489);
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  width: 100%;
+  bottom: 0;
+  z-index: 3;
 }
 
 @keyframes blink-bg {
@@ -501,7 +590,7 @@
 
 @media screen and (max-width: 834px) {
   .chatwithusterms {
-    font-size: 12px;
+    font-size: 15px;
     padding: 5px;
   }
 
@@ -517,7 +606,7 @@
   }
 
   .chatwithusterms {
-    font-size: 10px;
+    font-size: 15px;
     padding: 5px;
   }
 
@@ -538,7 +627,7 @@
   }
 
   .chatwithusterms {
-    font-size: 8px;
+    font-size: 15px;
     padding: 3px;
   }
 
@@ -1303,6 +1392,90 @@
   .packages-container {
     flex-direction: column;
   }
+
+  .package-badge {
+    font-size: 7px;
+    padding: 6px 12px;
+  }
+
+  .select-button {
+    padding: 14px 28px;
+    font-size: 12px;
+  }
+}
+
+/*-------------------pass plus container-----------------------   */
+.passplus-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  border-radius: 12px;
+  width: 100%;
+  padding: 20px;
+}
+
+.passplus-card-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.passplus-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 90px 10px 10px;
+}
+
+.passplus {
+  width: 30%;
+}
+
+@media (max-width: 1024px) {
+  .passplus {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .passplus-card {
+    flex-direction: column;
+  }
+
+  .passplus-card-content {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  .passplus {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .passplus-card {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .passplus-card-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .passplus-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .passplus-card {
+    padding: 0px;
+  }
 }
 
 /*--------------- Intensive Driving Courses -------------*/
@@ -1328,19 +1501,35 @@
   margin-bottom: 50px;
 }
 
-.intensiveheading h3 {
-  font-size: 22px;
+.intensiveheadingtext {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px 50px;
+}
+
+.intensiveheadingtext h1 {
+  font-size: 44px;
+  color: #ffffff;
+  letter-spacing: -2px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-top: 10px;
+  margin-right: auto;
+  text-align: left;
+}
+
+.intensiveheadingtext h3 {
+  font-size: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: regular;
+  font-weight: normal;
   color: #ffffff;
   margin-bottom: 15px;
   letter-spacing: -0.5px;
   text-align: left;
-  padding: 50px;
 }
 
 .intensiveheading img {
-  width: 40%;
+  width: 30%;
   height: auto;
   margin-right: 20px;
 }
@@ -1362,9 +1551,19 @@
     margin: 0;
   }
 
-  .intensiveheading h3 {
+  .intensiveheadingtext h1 {
+    font-size: 25px;
+    letter-spacing: -2px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    text-align: left;
+  }
+
+  .intensiveheadingtext h3 {
     font-size: 12px;
-    padding: 13px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    text-align: left;
+    padding: 0;
   }
 }
 
@@ -1376,13 +1575,24 @@
   }
 
   .intensiveheading img {
-    width: 100%;
-    margin: 0;
+    width: 80%;
+    margin-bottom: 20px;
+    border-radius: 35px;
   }
 
-  .intensiveheading h3 {
-    font-size: 22px;
-    padding: 15px;
+  .intensiveheadingtext h1 {
+    font-size: 20px;
+    letter-spacing: -2px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    text-align: left;
+  }
+
+  .intensiveheadingtext h3 {
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    text-align: left;
+    padding: 0;
   }
 }
 
@@ -1864,6 +2074,40 @@
 
 @media screen and (max-width: 768px) {
   .instructor-vehicle-container {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .instructor-vehicle-text {
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .instructor-vehicle-text h3 {
+    font-size: 24px;
+  }
+
+  .instructor-vehicle-text p {
+    font-size: 14px;
+  }
+
+  .instructor-vehicle-container img {
+    width: 50%;
+    margin: 20px 0 32px 0;
+    border-radius: 35px;
+  }
+
+  .instructor-vehiclediv {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .instructor-vehicle-container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -1875,8 +2119,16 @@
     padding: 20px;
   }
 
+  .instructor-vehicle-text h3 {
+    font-size: 20px;
+  }
+
+  .instructor-vehicle-text p {
+    font-size: 12px;
+  }
+
   .instructor-vehicle-container img {
-    width: 80%;
+    width: 100%;
     margin: 20px 0 32px 0;
     border-radius: 35px;
   }

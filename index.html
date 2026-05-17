@@ -4,7 +4,7 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Driving School near me - GreenPass GPS</title>
+  <title>Driving School in Birmingham | GreenPass GPS</title>
   <meta name="title" content="Driving School near me - GreenPass GPS">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <meta name="description"
@@ -19,9 +19,55 @@
   <link rel="apple-touch-icon" sizes="180x180" href="components/assets/favicon_io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="components/assets/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="components/assets/favicon_io/favicon-16x16.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel='stylesheet' href='styles.css'>
   <link rel='stylesheet' href='components/componentscss/header.css'>
   <link rel='stylesheet' href='components/componentscss/header2.css'>
+  
+  <!-- SEO Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DrivingSchool",
+    "name": "GreenPass GPS",
+    "url": "https://drivinglessonsgreen.co.uk/",
+    "logo": "https://drivinglessonsgreen.co.uk/components/assets/favicon_io/apple-touch-icon.png",
+    "image": "https://drivinglessonsgreen.co.uk/components/assets/learntodrivecwide.jpg",
+    "description": "Learn to drive safely and confidently with certified instructors in Birmingham. Manual and automatic car lessons available.",
+    "telephone": "+447746243128",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Birmingham",
+      "addressRegion": "West Midlands",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.4862,
+      "longitude": -1.8904
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61579310678354",
+      "https://www.tiktok.com/@greenpassl",
+      "https://www.instagram.com/greenlgpsom/"
+    ],
+    "priceRange": "££"
+  }
+  </script>
 
 </head>
 
@@ -30,40 +76,39 @@
     <!-- header background, icon -->
     <section class="headerimgsec" id="home">
       <!-- navbar -->
-      <div class="container">
+      <div class="container" id="mainNavbar">
         <h3 class="title"><a href="#home" class="titlea">Home</a></h3>
-        <div class="dropdown1">
-          <button class="dropbtn1"><img src="https://img.icons8.com/?size=100&id=6VwxladcAlxL&format=png&color=000000"
-              style="width: 24px; height: 24px;" alt="Select Package" /></button>
-          <ul class="list1">
-            <li class="item">
-              <a href="#packagea" class="nav-link1">Standard Lessons</a>
-            </li>
-            <li class="item">
-              <a href="#packageb" class="nav-link1">Advanced Lessons</a>
-            </li>
-            <li class="item">
-              <a href="#package1" class="nav-link1">Package - 235£/5 hrs</a>
-            </li>
-            <li class="item">
-              <a href="#package2" class="nav-link1">Package - 450£/10 hrs</a>
-            </li>
-            <li class="item">
-              <a href="#package3" class="nav-link1">Package - 870£/20 hrs</a>
-            </li>
-            <li class="item">
-              <a href="#package4" class="nav-link1">Package - 1200£/30 hrs</a>
-            </li>
-          </ul>
-        </div>
         <div class="dropdown">
-          <button class="dropbtn">☰</button>
+          <button class="dropbtn"><i class="bi bi-list"></i></button>
           <ul class="list">
             <li class="item">
               <a href="#instructors" class="nav-link">Become Instructor</a>
             </li>
-            <li class="item">
-              <a href="#packages" class="nav-link">Driving Courses</a>
+            <li class="item dropdowndualbtn submenu-parent">
+              <button class="submenu-toggle" type="button" aria-expanded="false">
+                <span>Driving Courses</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <ul class="submenu-list">
+                <li>
+                  <a href="#packagea" class="submnc">Standard Lessons</a>
+                </li>
+                <li>
+                  <a href="#packageb" class="submnc">Advanced Lessons</a>
+                </li>
+                <li>
+                  <a href="#package1" class="submnc">Package - 235£/5 hrs</a>
+                </li>
+                <li>
+                  <a href="#package2" class="submnc">Package - 450£/10 hrs</a>
+                </li>
+                <li>
+                  <a href="#package3" class="submnc">Package - 870£/20 hrs</a>
+                </li>
+                <li>
+                  <a href="#package4" class="submnc">Package - 1200£/30 hrs</a>
+                </li>
+              </ul>
             </li>
             <li class="item">
               <a href="#more-reviews" class="nav-link">Comentary</a>
@@ -77,9 +122,10 @@
       <div class="headericon">
         <div class="headericonbg">
           <div class="headericontext">
-            <h5 style="color: white;">
-              The Driving School prepares pupils to drive safely and confidently for the rest of their lives!
-            </h5>
+            <h1 style="color: white;">
+              Expert Driving Lessons in Birmingham | GreenPass School of Motoring (GPS)
+              <!--The Driving School prepares pupils to drive safely and confidently for the rest of their lives-->
+            </h1>
             <p>
               Pass faster, drive smarter. No more L plates let's make it happen.
               Safe driving starts with the right driving school. Driving lessons
@@ -113,25 +159,12 @@
         <img class="headerbkimg" src="components/assets/learntodrivecwide.jpg"
           alt="GreenPass driving school car lessons in Birmingham, UK" />
       </div>
-      <div class="chatwithus">
-        <div class="social-media">
-          <h5>Follow our Social Media</h5>
-          <icon class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61579310678354"><img class="social-icon"
-                src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="Facebook" /></a>
-            <a href="https://www.tiktok.com/@greenpassl"><img class="social-icon"
-                src="https://img.icons8.com/?size=100&id=118640&format=png&color=000000" alt="Tiktok" /></a>
-            <a href="https://www.instagram.com/greenlgpsom/"><img class="social-icon"
-                src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000" alt="Instagram" /></a>
-          </icon>
-        </div>
-        <div class="chatwithusterms">
-          <a class="terms" href="./components/pages/tnc.html">
-            <p>
-              Please read term and condition before accepting booking lessons
-            </p>
-          </a>
-        </div>
+      <div class="chatwithusterms">
+        <a class="terms" href="./components/pages/tnc.html">
+          <p>
+            Please read term and condition before accepting booking lessons
+          </p>
+        </a>
       </div>
       <div class="whatsapp-chatdiv">
         <div class="whatsapp-chat">
@@ -769,17 +802,39 @@
             </button>
           </div>
         </div>
+        <!-- tab for pass plus -->
+        <div class="package-card passplus-container" id="packagec">
+          <div class="passplus-card">
+              <div class="package-badge">Advanced Qualification</div>
+              <div class="passplus-card-content">
+                <div class="passplus-content">
+                  <h1 class="passplus-title" style="color: #2373ff; text-align: left;">Save up to 35% on Car Insurance with Pass Plus
+                  </h1>
+                  <p class="passplus-description" style="text-align: left; color: #64748b;">
+                    Already passed your practical test? Build expert confidence on motorways, rural roads, and night driving with our
+                    official 6-hour DVSA syllabus. No exam required.
+                  </p>
+                </div>
+                <button class="select-button passplus">
+                  <span><a href="components/pages/passplus.html" style="text-decoration: none; color: white">Explore Pass Plus</a></span>
+                </button>
+              </div>
+          </div>
+        </div>
       </div>
       <div class="intensiveheadingdiv">
         <div class="intensiveheading">
-          <h3>
-            We offers personalized intensive driving courses designed to match your unique learning pace,
-            experience level, and goals. Whether you’re a beginner building confidence behind the wheel or an experienced
-            learner
-            aiming to refine your skills, our expert instructors ensure each lesson fits your needs perfectly. Choose the
-            course
-            that best suits your driving journey and get ready to master the road safely and efficiently.
-          </h3>
+          <div class="intensiveheadingtext">
+            <h1>Personalised Intensive Driving Programs</h1>
+            <h3>
+              We offers personalized intensive driving courses designed to match your unique learning pace,
+              experience level, and goals. Whether you’re a beginner building confidence behind the wheel or an experienced
+              learner
+              aiming to refine your skills, our expert instructors ensure each lesson fits your needs perfectly. Choose the
+              course
+              that best suits your driving journey and get ready to master the road safely and efficiently.
+            </h3>
+          </div>
           <img class="intensiveheadingimg" src="components/assets/learntodrived.jpg" alt="Intensive Courses" />
         </div>
       </div>
@@ -1164,33 +1219,23 @@
             <text class="contacttext1">
               <p class="copyright">© 2023 Green Pass Driving School. All rights reserved.</p>
             </text>
+            <div class="chatwithus">
+              <div class="social-media">
+                <h5>Follow our Social Media</h5>
+                <icon class="social-icons">
+                  <a href="https://www.facebook.com/profile.php?id=61579310678354"><img class="social-icon"
+                      src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="Facebook" /></a>
+                  <a href="https://www.tiktok.com/@greenpassl"><img class="social-icon"
+                      src="https://img.icons8.com/?size=100&id=118640&format=png&color=000000" alt="Tiktok" /></a>
+                  <a href="https://www.instagram.com/greenlgpsom/"><img class="social-icon"
+                      src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000" alt="Instagram" /></a>
+                </icon>
+              </div>
+            </div>
             <text class="contacttext2">
               <h5>Phone: +447746243128</h5>
               <h5>Email: greenlgpsom@gmail.com</h5>
               <h5>Address: Kingstanding Birmingham B44</h5>
-              <!-- visitor counter -->
-              <section id="visitor-counter" style="display: flex; justify-content: center; margin: 18px 0">
-                <div>
-                  <div style="
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                min-width: 120px;
-                              ">
-                    <div style="font-size: 13px; font-weight: 700; opacity: 0.9">
-                      Website visitors
-                    </div>
-                    <div id="visitor-count" style="
-                                  font-size: 28px;
-                                  font-weight: 900;
-                                  letter-spacing: 0.6px;
-                                  margin-top: 6px;
-                                ">
-                      …
-                    </div>
-                  </div>
-                </div>
-              </section>
             </text>
           </div>
           <div class="contactbk2">

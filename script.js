@@ -3,6 +3,7 @@ import { initClickEffect } from "./components/scripts/clickeffect.js";
 import { initVisitorCounter } from "./components/scripts/visitorcounter.js";
 import { initWaveParticle } from "./components/scripts/waveparticle.js";
 import { initAnimations } from "./components/scripts/animation.js";
+import { initScrollEffect } from "./components/scripts/scrolleffect.js";
 
 // Version control for cache / reload
 const version = '2.5';  // update version when making changes
@@ -24,3 +25,4 @@ initAnimations();
 initClickEffect();
 initVisitorCounter();
 initWaveParticle();
+initScrollEffect();

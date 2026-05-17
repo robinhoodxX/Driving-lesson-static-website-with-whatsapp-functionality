@@ -18,6 +18,14 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://drivinglessonsgreen.co.uk/components/pages/coursespage.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://drivinglessonsgreen.co.uk/components/pages/passplus.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://drivinglessonsgreen.co.uk/components/pages/services.html</loc>
     <priority>0.80</priority>
   </url>
