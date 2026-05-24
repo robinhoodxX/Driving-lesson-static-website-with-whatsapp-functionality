@@ -4,11 +4,14 @@
 </FilesMatch>
 
 # Cache CSS and JS for 1 year (but allow versioning)
+#31536000  1 year delay time
+#15768000 6 months delay time
+#86400 1 day delay time
 <FilesMatch "\.(css|js)$">
-  Header set Cache-Control "max-age=31536000, public"
+  Header set Cache-Control "max-age=15768000, public" 
 </FilesMatch>
 
 # Cache images for 1 year (optional)
 <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp)$">
-  Header set Cache-Control "max-age=31536000, public"
+  Header set Cache-Control "max-age=15768000, public"
 </FilesMatch>

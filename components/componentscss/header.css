@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 /*Navigation bar styles*/
 .container {
@@ -1951,8 +1951,9 @@
   padding: 50px;
 }
 
-.instructor-vehicle-text h3 {
+.instructor-vehicle-text-title {
   font-size: 30px;
+  color: rgb(0, 185, 105)
 }
 
 .instructor-vehicle-text p {

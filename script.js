@@ -1,8 +1,6 @@
-import { initHeader, initHeader2 } from "./components/scripts/headerdomndropdown.js";
+import { initHeader } from "./components/scripts/headerdomndropdown.js";
 import { initClickEffect } from "./components/scripts/clickeffect.js";
-import { initVisitorCounter } from "./components/scripts/visitorcounter.js";
-import { initWaveParticle } from "./components/scripts/waveparticle.js";
-import { initAnimations } from "./components/scripts/animation.js";
+// import { initAnimations } from "./components/scripts/animation.js";
 import { initScrollEffect } from "./components/scripts/scrolleffect.js";
 
 // Version control for cache / reload
@@ -16,13 +14,10 @@ if (storedVersion !== version) {
 
 // Initialize headers directly since HTML is already in index.html
 initHeader();
-initHeader2();
 
 // Run animations after DOM is ready
-initAnimations();
+// initAnimations();
 
 // Global effects
 initClickEffect();
-initVisitorCounter();
-initWaveParticle();
 initScrollEffect();

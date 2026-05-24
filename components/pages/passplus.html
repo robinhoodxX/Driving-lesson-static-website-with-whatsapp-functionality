@@ -12,7 +12,152 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel='stylesheet' href='/components/componentscss/passplus.css'>
 
+  <style>
+    /* Pass Plus Component Styling */
+    .pass-plus-section {
+      background-color: #f8f9fa;
+      /* Light background to separate from other sections */
+    }
 
+    .badge-insurance {
+      background-color: #28a745;
+      /* Eco/Green pass thematic color */
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+    }
+
+    .module-card {
+      border: none;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .module-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(40, 167, 69, 0.1);
+      /* Subtle green tint */
+      color: #28a745;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-green-pass {
+      background-color: #28a745;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      border: none;
+      transition: background 0.2s ease;
+    }
+
+    .btn-green-pass:hover {
+      background-color: #218838;
+      color: white;
+    }
+
+    /*--------------chat with us whatsapp icon floating--------------------------------*/
+
+    .whatsapp-chatdiv {
+      position: fixed;
+      bottom: 70px;
+      right: 80px;
+      z-index: 1000;
+    }
+
+    .whatsapp-chat {
+      position: fixed;
+      background-color: #25d366;
+      border-radius: 10%;
+      padding: 2px;
+      width: 55px;
+      height: 55px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .whatsapp-chat img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .chatwithuswhatsapp {
+      color: white;
+      text-align: center;
+      font-size: 38px;
+      font-weight: bold;
+      cursor: pointer;
+      padding-right: 53px;
+    }
+
+    /*------------------pricing section------------------*/
+    .pricing-section {
+      background-color: rgba(163, 163, 163, 0.11);
+      /* Semi-transparent white background */
+      padding: 1rem;
+      border-radius: 8px;
+      padding: 100px;
+    }
+
+    .pricingbadge {
+      background-color: #28a745;
+      color: white;
+      font-weight: 600;
+      font-size: 10px;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      width: fit-content;
+    }
+
+    .list-unstyled {
+      list-style: none;
+    }
+
+    .contactcontainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn {
+      transition: background 0.2s ease;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-section {
+        padding: 50px 20px;
+      }
+
+      .btn {
+        font-size: smaller;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 425px) {
+      .pricing-section {
+        padding: 50px 20px;
+      }
+
+      .btn {
+        font-size: smaller;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -123,7 +268,8 @@
             that suits you. Book your block or enquire about local rates.</p>
         </div>
         <div class="col-md-4 text-md-end">
-          <a href="/components/pages/coursespage.html" class="btn btn-green-pass shadow-sm btn-lg w-100 text-nowrap">Book Course Now</a>
+          <a href="/components/pages/coursespage.html"
+            class="btn btn-green-pass shadow-sm btn-lg w-100 text-nowrap">Book Course Now</a>
         </div>
       </div>
 
@@ -132,7 +278,8 @@
       <div class="whatsapp-chat">
         <a class="whatsapp-btn"
           href="https://wa.me/447746243128?text=Hello!%20I%20am%20interested%20in%20driving%20lessons.">
-          <img class="social-icon" src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" alt="whatsapp" />
+          <img class="social-icon" src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000"
+            alt="whatsapp" />
           <span class="tooltip">Chat with us</span>
         </a>
       </div>
@@ -141,15 +288,21 @@
     <div class="pricing-section mt-5">
       <h5 class="pricingbadge">PRICING</h5>
       <h3>Transparent, flexible pricing</h3>
-      <p class="text-muted mb-0">Our Pass Plus course is competitively priced at £150 for the full 6-hour program. We also offer flexible payment options, including pay-as-you-go for each module at £30 per module. Contact us for group discounts and local rates.</p>
+      <p class="text-muted mb-0">Our Pass Plus course is competitively priced at £150 for the full 6-hour program. We
+        also offer flexible payment options, including pay-as-you-go for each module at £30 per module. Contact us for
+        group discounts and local rates.</p>
     </div>
     <div class="pricing-section mb-5">
       <h3>Simple, fast, certified.</h3>
-      <p class="text-muted mb-0">Our Pass Plus course is designed to be straightforward and efficient. With no final exam, you can focus on learning and improving your driving skills. Upon completion of the 6-hour course, you'll receive a certificate that can help you secure insurance discounts and demonstrate your commitment to safe driving.</p>
+      <p class="text-muted mb-0">Our Pass Plus course is designed to be straightforward and efficient. With no final
+        exam, you can focus on learning and improving your driving skills. Upon completion of the 6-hour course, you'll
+        receive a certificate that can help you secure insurance discounts and demonstrate your commitment to safe
+        driving.</p>
       <ul class="list-unstyled mt-3 mb-0">
         <li><i class="bi bi-check-circle-fill text-success me-2"></i> No final exam required</li>
         <li><i class="bi bi-check-circle-fill text-success me-2"></i> Certificate provided upon completion</li>
-        <li><i class="bi bi-check-circle-fill text-success me-2"></i> 6 standard modules covering all key driving conditions</li>
+        <li><i class="bi bi-check-circle-fill text-success me-2"></i> 6 standard modules covering all key driving
+          conditions</li>
       </ul>
     </div>
     <!-- FAQ Section -->
@@ -181,9 +334,10 @@
           <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo"
             data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              The Pass Plus course typically takes around 6 hours to complete. It can be done in one day or spread out over several days, depending on your schedule and preferences.
+              The Pass Plus course typically takes around 6 hours to complete. It can be done in one day or spread out
+              over several days, depending on your schedule and preferences.
 
-    </div>
+            </div>
           </div>
         </div>
         <div class="accordion-item">
@@ -196,7 +350,9 @@
           <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree"
             data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              Many insurance providers offer discounts to drivers who have completed the Pass Plus course, as it demonstrates a commitment to safe driving. The amount of discount can vary, so it's best to check with your insurance provider for specific details.
+              Many insurance providers offer discounts to drivers who have completed the Pass Plus course, as it
+              demonstrates a commitment to safe driving. The amount of discount can vary, so it's best to check with
+              your insurance provider for specific details.
             </div>
           </div>
         </div>
@@ -207,8 +363,10 @@
       <h3 class="text-left">
         Ready to take the next step? Book your Pass Plus course today and start driving with confidence!
       </h3>
-      <p class="text-left mb-0">Contact us to schedule your Pass Plus course and take advantage of our competitive pricing and expert instruction. We look forward to helping you become a safer, more confident driver.</p>
-      <button class="btn btn-green-pass shadow-sm btn-lg mt-3" onclick="window.location.href='/components/pages/contactus.html'">Contact Us</button>
+      <p class="text-left mb-0">Contact us to schedule your Pass Plus course and take advantage of our competitive
+        pricing and expert instruction. We look forward to helping you become a safer, more confident driver.</p>
+      <button class="btn btn-green-pass shadow-sm btn-lg mt-3"
+        onclick="window.location.href='/components/pages/contactus.html'">Contact Us</button>
     </div>
   </section>
   <!-- Bootstrap 5 JavaScript Bundle JS CDN -->

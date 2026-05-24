@@ -1,16 +1,38 @@
+let isTicking = false;
+
 function updateNavbarScrollState() {
   const navbar = document.getElementById('mainNavbar');
-  if (!navbar) return;
+  if (!navbar) {
+    isTicking = false;
+    return;
+  }
 
   if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
+    // Only touch the DOM if the class isn't already there
+    if (!navbar.classList.contains('scrolled')) {
+      navbar.classList.add('scrolled');
+    }
   } else {
-    navbar.classList.remove('scrolled');
+    // Only touch the DOM if the class is actually there
+    if (navbar.classList.contains('scrolled')) {
+      navbar.classList.remove('scrolled');
+    }
   }
+
+  // Allow the next scroll event to schedule an update
+  isTicking = false;
 }
 
 function scrolleffect() {
-  window.addEventListener('scroll', updateNavbarScrollState, { passive: true });
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      // Schedule the updates to line up perfectly with the browser's screen refresh rate
+      window.requestAnimationFrame(updateNavbarScrollState);
+      isTicking = true;
+    }
+  }, { passive: true });
+
+  // Initial check on page load
   updateNavbarScrollState();
 }
 
