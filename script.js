@@ -1,6 +1,6 @@
 import { initHeader } from "./components/scripts/headerdomndropdown.js";
 import { initClickEffect } from "./components/scripts/clickeffect.js";
-// import { initAnimations } from "./components/scripts/animation.js";
+import { initAnimations } from "./components/scripts/animation.js";
 import { initScrollEffect } from "./components/scripts/scrolleffect.js";
 
 // Version control for cache / reload
@@ -16,7 +16,7 @@ if (storedVersion !== version) {
 initHeader();
 
 // Run animations after DOM is ready
-// initAnimations();
+initAnimations();
 
 // Global effects
 initClickEffect();
