@@ -16,7 +16,7 @@ if (storedVersion !== version) {
 // Initialize headers directly since HTML is already in index.html
 initHeader();
 
-initWindowPopup();  
+initWindowPopup();
 
 // Run animations after DOM is ready
 initAnimations();

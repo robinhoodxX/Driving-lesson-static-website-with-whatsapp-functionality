@@ -1,35 +1,43 @@
 export function initWindowPopup() {
+  if (typeof document === "undefined" || typeof window === "undefined") return;
+
   const modal = document.getElementById("conditionsModal");
-  const openBtns = document.querySelectorAll('[id="openModalBtn"]');
+  const trigger = document.getElementById("openModalBtn");
   const closeX = document.getElementById("closeModalBtn");
   const closeBtn2 = document.getElementById("closeModalBtn2");
 
-  if (!modal) return;
+  if (!modal || !trigger) return;
 
   const openModal = () => {
     modal.hidden = false;
     modal.style.display = "flex";
+    modal.setAttribute("aria-hidden", "false");
   };
 
   const closeModal = () => {
     modal.hidden = true;
     modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
   };
 
-  openBtns.forEach((btn) => {
-    btn.addEventListener("click", openModal);
+  closeModal();
+
+  trigger.addEventListener("click", (event) => {
+    event.preventDefault();
+    openModal();
   });
 
-  if (closeX) {
-    closeX.addEventListener("click", closeModal);
-  }
+  closeX?.addEventListener("click", closeModal);
+  closeBtn2?.addEventListener("click", closeModal);
 
-  if (closeBtn2) {
-    closeBtn2.addEventListener("click", closeModal);
-  }
-
-  window.addEventListener("click", (event) => {
+  modal.addEventListener("click", (event) => {
     if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) {
       closeModal();
     }
   });
